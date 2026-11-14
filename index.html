@@ -1,570 +1,304 @@
-<!DOCTYPE html>
-<html lang="es-ES">
+<!doctype html>
+<html lang="es" data-type="service" data-radius="soft" data-buttons="tonal" data-motion>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SO-LA-NA Entertainment</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Desarrollamos experiencias que trasciendan en el arte flamenco, el escénico y el musical, persiguiendo la singularidad, la brillantez y la autenticidad.">
-<link rel="canonical" href="https://so-la-na.com/">
-<meta property="og:locale" content="es_ES">
+<title>SO-LA-NA: producción de espectáculos de flamenco</title>
+<meta name="description" content="Creamos y producimos espectáculos exclusivos de flamenco para teatros, giras y eventos corporativos, como Flamenco Real en el Teatro Real y Las Minas Tour.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SO-LA-NA | Creación y producción de espectáculos exclusivos.">
-<meta property="og:description" content="Desarrollamos experiencias que trasciendan en el arte flamenco, el escénico y el musical, persiguiendo la singularidad, la brillantez y la autenticidad.">
-<meta property="og:url" content="https://so-la-na.com/">
-<meta property="og:site_name" content="SO-LA-NA">
-<meta property="og:image" content="assets/img/flamenco-real-cartel.jpg">
+<meta property="og:title" content="SO-LA-NA: producción de espectáculos de flamenco">
+<meta property="og:description" content="Flamenco Real en el Teatro Real, Las Minas Tour y espectáculos a medida para teatros, giras y empresas.">
+<meta property="og:image" content="share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/img/favicon.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<meta name="theme-color" content="#f4f2ee">
+<link rel="canonical" href="https://so-la-na.com/">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&family=Red+Hat+Text:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
 <style>
-/* Layout: un programme de mano de teatro. Escenario oscuro con luz violeta, una sola luz cálida (oro de candil) para lo que importa. */
-:root{
-  --stage:#0f0d16;        /* fondo: escenario apagado, con sesgo violeta */
-  --stage-2:#17141f;      /* bandas y superficies */
-  --line:#2c2738;         /* filetes */
-  --bone:#ece5d8;         /* texto principal */
-  --mute:#a59eb2;         /* texto secundario */
-  --gold:#d6ab5e;         /* acento: luz de candil */
-  --paper:#f3efe7;        /* panel claro (logotipos de clientes) */
-  --ink:#16131c;
-  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
-  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --s-1:.8125rem; --s0:1rem; --s1:1.1875rem; --s2:1.5rem; --s3:clamp(1.9rem,3.4vw,2.6rem); --s4:clamp(2.6rem,6vw,4.75rem); --s5:clamp(3rem,9vw,7.5rem);
-  --wrap:1240px;
-  --gutter-l:max(16px,env(safe-area-inset-left,0px));
-  --gutter-r:max(16px,env(safe-area-inset-right,0px));
-  color-scheme:dark;
+:root {
+  --p-bg: #f4f2ee; --p-surface: #e7e5e2; --p-ink: #151316; --p-muted: #676566;
+  --p-accent: #8a6a2e; --p-accent-ink: #ffffff; --p-action: #8a6a2e; --p-action-ink: #ffffff;
+  --p-inv-bg: #151316; --p-inv-surface: #211f22; --p-inv-ink: #f4f2ee; --p-inv-muted: #969493;
+  --p-inv-accent: #8a6a2e; --p-inv-accent-ink: #ffffff; --p-inv-action: #8a6a2e; --p-inv-action-ink: #ffffff;
+  --font-display: "Red Hat Display", system-ui, sans-serif;
+  --font-text: "Red Hat Text", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.025em;
+  --display-tracking-xl: -0.035em;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--stage);color:var(--bone);font-family:var(--f-body);font-size:var(--s0);line-height:1.6;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--stage)}
-img,video{max-width:100%;height:auto;display:block}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-[hidden]{display:none!important}
-.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
-.eyebrow{font-size:var(--s-1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0}
-h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.05;margin:0;text-wrap:balance}
-p{margin:0;max-width:65ch}
-.btn{display:inline-flex;align-items:center;gap:.6em;font-size:var(--s-1);font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:.95em 1.5em;border:1px solid var(--gold);color:var(--gold);transition:background .2s,color .2s}
-.btn:hover{background:var(--gold);color:var(--ink)}
-.btn--solid{background:var(--gold);color:var(--ink)}
-.btn--solid:hover{background:var(--bone);border-color:var(--bone)}
-.link{font-weight:600;font-size:var(--s-1);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--gold);border-bottom:1px solid currentColor;padding-bottom:2px}
-.link:hover{color:var(--bone)}
-
-/* ---------- Cabecera ---------- */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--stage) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:44px;height:44px}
-.brand span{font-family:var(--f-display);font-size:1.15rem;letter-spacing:.06em;white-space:nowrap}
-@media (max-width:480px){.top .brand span{display:none}}
-.nav{display:flex;align-items:center;gap:28px;font-size:.875rem;font-weight:500}
-.nav a{text-decoration:none;color:var(--mute)}
-.nav a:hover{color:var(--bone)}
-.lang{display:flex;gap:2px;font-size:var(--s-1);font-weight:600;letter-spacing:.1em}
-.lang a{text-decoration:none;padding:.3em .5em;color:var(--mute)}
-.lang a[aria-current]{color:var(--bone);border-bottom:1px solid var(--gold)}
-.menu-btn{font:inherit;font-size:var(--s-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:none;color:var(--bone);border:1px solid var(--line);padding:.6em 1em;cursor:pointer;display:inline-flex;align-items:center;gap:.6em}
-.menu-btn:hover{border-color:var(--gold)}
-.menu-btn i{display:block;width:16px;height:1px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
-.nav-links{display:flex;gap:28px}
-@media (max-width:900px){.nav .nav-links{display:none}}
-
-/* Menú completo */
-.menu{position:fixed;inset:0;z-index:70;background:var(--stage);overflow-y:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-.menu-head{display:flex;justify-content:space-between;align-items:center;height:68px;border-bottom:1px solid var(--line)}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px 32px;padding-block:48px 64px}
-.menu-grid h2{font-family:var(--f-body);font-size:var(--s-1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.menu-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.menu-grid a{font-family:var(--f-display);font-size:1.6rem;text-decoration:none;line-height:1.15}
-.menu-grid a:hover{color:var(--gold);font-style:italic}
-
-/* ---------- Portada ---------- */
-.hero{position:relative;min-height:min(86svh,780px);display:grid;align-items:end;overflow:hidden;isolation:isolate}
-.hero video,.hero .hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,13,22,.15) 0%,rgba(15,13,22,.35) 45%,var(--stage) 100%)}
-.hero .wrap{width:100%;padding-block:120px 64px;display:grid;gap:20px}
-.hero h1{font-size:var(--s5);letter-spacing:-.01em;max-width:13ch}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero .kicker{font-family:var(--f-display);font-style:italic;font-size:var(--s2);color:var(--bone)}
-.hero-bar{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:12px}
-.vid-ctrl{font:inherit;font-size:var(--s-1);font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:none;border:0;color:var(--mute);cursor:pointer;padding:.4em 0}
-.vid-ctrl:hover{color:var(--bone)}
-
-/* ---------- Temporada (banda) ---------- */
-.season{border-block:1px solid var(--line);background:var(--stage-2)}
-.season .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-block:22px}
-.season p{max-width:none;font-family:var(--f-display);font-size:var(--s2)}
-.season p b{font-weight:500;color:var(--gold)}
-.season small{display:block;font-family:var(--f-body);font-size:var(--s-1);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:2px}
-
-/* ---------- Secciones ---------- */
-.section{padding-block:clamp(72px,10vw,128px)}
-.section-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 40px;margin-bottom:48px}
-.section-head h2{font-size:var(--s4);max-width:16ch}
-.section-head h2 em{font-style:italic}
-.section-head p{color:var(--mute)}
-
-/* En cartel: producciones */
-.show{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(40px,6vw,72px);border-top:1px solid var(--line)}
-.show:first-of-type{border-top:0;padding-top:0}
-.show:nth-of-type(even) .show-media{order:2}
-.show-media{position:relative;min-width:0}
-.show-media img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.show-body{display:grid;gap:20px;min-width:0}
-.show-body h3{font-size:var(--s4)}
-.show-body .tag{font-family:var(--f-display);font-style:italic;font-size:var(--s2);color:var(--gold);line-height:1.25}
-.show-body p{color:var(--mute)}
-.show-body p strong{color:var(--bone);font-weight:500}
-.show-actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:8px}
-
-/* Flamenco Real destacado */
-.fr{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-.fr-media{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
-.fr-media .poster{aspect-ratio:695/945;object-fit:cover}
-.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid var(--line);margin-block:8px}
-.figures div{padding:18px 12px 16px 0;display:grid;gap:4px}
-.figures div+div{padding-left:16px;border-left:1px solid var(--line)}
-.figures b{font-family:var(--f-display);font-weight:400;font-size:var(--s3);line-height:1;font-variant-numeric:lining-nums tabular-nums}
-.figures span{font-size:var(--s-1);color:var(--mute);line-height:1.3}
-.fr-photo{width:100%;aspect-ratio:3/2;object-fit:cover}
-.caption{font-size:var(--s-1);color:var(--mute)}
-@media (max-width:860px){
-  .show,.fr{grid-template-columns:minmax(0,1fr)}
-  .show:nth-of-type(even) .show-media{order:0}
-  .fr-media .poster{max-width:420px}
-  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .figures div:nth-child(3){border-left:0;padding-left:0}
-  .figures div:nth-child(n+3){border-top:1px solid var(--line)}
-}
-
-/* Prensa */
-.press{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.press a{display:grid;grid-template-rows:auto 1fr;text-decoration:none;background:var(--stage-2);border:1px solid var(--line);transition:border-color .2s}
-.press a:hover{border-color:var(--gold)}
-.press .thumb{aspect-ratio:2/1;overflow:hidden;background:var(--ink);display:grid;place-items:center}
-.press .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.press a:hover .thumb img{transform:scale(1.04)}
-.press .meta{padding:20px 22px 24px;display:grid;gap:8px;align-content:start}
-.press .meta span{font-size:var(--s-1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.press .meta strong{font-family:var(--f-display);font-weight:400;font-size:1.35rem;line-height:1.2}
-.play{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center}
-.play::before{content:"";border-left:16px solid var(--gold);border-block:10px solid transparent;margin-left:5px}
-@media (max-width:860px){.press{grid-template-columns:minmax(0,1fr)}}
-
-/* Archivo Flamenco Real */
-.archive{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-flow:dense;gap:12px}
-.archive a{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;text-decoration:none;background:var(--stage-2)}
-.archive a.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
-.archive a.big span{font-size:2.5rem}
-@media (max-width:1000px){.archive{grid-template-columns:repeat(3,minmax(0,1fr))}.archive a.big{grid-row:auto;aspect-ratio:12/5}.archive a.big:first-child{grid-column:span 3}.archive a.big+a.big{grid-column:auto;aspect-ratio:4/5}}
-@media (max-width:640px){.archive{grid-template-columns:repeat(2,minmax(0,1fr))}.archive a.big:first-child{grid-column:span 2;aspect-ratio:8/5}}
-.archive img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) brightness(.8);transition:filter .4s,transform .6s}
-.archive a:hover img,.archive a:focus-visible img{filter:none;transform:scale(1.04)}
-.archive span{position:absolute;left:12px;bottom:10px;font-family:var(--f-display);font-size:1.5rem;line-height:1;text-shadow:0 1px 12px rgba(0,0,0,.6)}
-.archive span small{font-family:var(--f-body);font-size:.7rem;font-weight:600;letter-spacing:.16em;display:block;color:var(--gold);margin-bottom:4px}
-
-/* Clientes */
-.clients{background:var(--paper);color:var(--ink)}
-.clients .section-head p{color:#5b5566}
-.clients .eyebrow{color:#8a6420}
-.clients img{width:100%;height:auto;mix-blend-mode:multiply}
-
-/* Nosotros / manifiesto */
-.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px)}
-.about h2{font-size:var(--s3);line-height:1.15}
-.about h2 em{color:var(--gold)}
-.about-body{display:grid;gap:24px;color:var(--mute);font-size:var(--s1)}
-.about-body p:first-child{color:var(--bone)}
-.about-body .milestone{border-left:1px solid var(--gold);padding-left:20px}
-.amigos{margin-top:16px;padding:28px;background:var(--stage-2);border:1px solid var(--line);display:grid;gap:16px;font-size:var(--s0)}
-@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}}
-
-/* Vídeos */
-.videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.video-card{display:grid;gap:14px;min-width:0}
-.video-card video{width:100%;aspect-ratio:16/9;background:var(--ink);object-fit:cover}
-.video-card p{font-size:.9rem;color:var(--mute)}
-@media (max-width:760px){.videos{grid-template-columns:minmax(0,1fr)}}
-
-/* ---------- Pie ---------- */
-.foot{border-top:1px solid var(--line);background:var(--stage-2);padding-bottom:env(safe-area-inset-bottom,0px)}
-.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:48px;padding-block:72px 48px}
-.foot h2{font-family:var(--f-body);font-size:var(--s-1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.foot ul a{text-decoration:none;color:var(--mute)}
-.foot ul a:hover{color:var(--bone)}
-.news-form{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.news-form label{flex:1 1 100%;font-size:.9rem;color:var(--mute)}
-.news-form input[type=email]{flex:1 1 220px;min-width:0;font:inherit;color:var(--bone);background:var(--stage);border:1px solid var(--line);padding:.85em 1em}
-.news-form input[type=email]:focus{border-color:var(--gold);outline:none}
-.news-form button{font:inherit;cursor:pointer}
-.news-msg{flex-basis:100%;font-size:.9rem;color:var(--gold)}
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:24px;border-top:1px solid var(--line);font-size:var(--s-1);color:var(--mute)}
-.legal nav{display:flex;flex-wrap:wrap;gap:8px 24px}
-.legal a{text-decoration:none}
-.legal a:hover{color:var(--bone)}
-@media (max-width:860px){.foot-grid{grid-template-columns:minmax(0,1fr)}}
-
-/* Aviso de cookies */
-.cookies{position:fixed;z-index:80;left:0;right:0;bottom:0;padding:16px var(--gutter-r) calc(16px + env(safe-area-inset-bottom,0px)) var(--gutter-l);background:var(--ink);border-top:1px solid var(--line)}
-.cookies .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding:0}
-.cookies p{font-size:.875rem;color:var(--mute);max-width:90ch}
-.cookies button{font:inherit;cursor:pointer}
 </style>
+<!-- page CSS: only what sits inside a visual and the kit lacks -->
+<style>
+  .nav__logo img { height: 40px; width: auto; display: block; }
+  .rows .rows__name small { display: block; font-weight: 400; color: var(--muted); font-size: var(--t-small); }
+  #producciones .frame { height: min(640px, var(--ly-fit, 640px)); }
+  #producciones .frame__img { object-position: 50% 30%; }
+  .archive .frame { display: block; }
+  .archive .frame { height: 520px; }
+  @media (min-width: 640px) and (max-width: 1023px) { .archive .frame { height: 360px; } #archivo .archive > .trio-a { grid-column: span 5; } #archivo .archive > .trio-b { grid-column: span 4; } #archivo .archive > .trio-c { grid-column: span 3; } }
+  .section-head a { white-space: nowrap; }
+    @media (max-width: 639px) { .archive .frame { height: auto; } .archive .trio-a { grid-column: 1 / -1; aspect-ratio: 4 / 3; } .archive .trio-b, .archive .trio-c { grid-column: span 6; aspect-ratio: 1; } main #temporada[data-moment]:not(.is-live) .mo-pc__visual > img { aspect-ratio: 4 / 3; max-height: none; } }
+  .develop { margin: 0; border-radius: var(--r-lg); overflow: hidden; height: min(600px, var(--ly-fit, 600px)); }
+  .develop > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  @media (max-width: 1023px) { .develop { height: auto; aspect-ratio: 4 / 3; margin-top: var(--s-7); } }
+  .logos-wall img { display: block; width: 100%; height: auto; border-radius: var(--r-md); }
+  .video-frame { aspect-ratio: 16 / 9; border-radius: var(--r-lg); overflow: hidden; background: var(--p-ink); }
+  .video-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (min-width: 640px) and (max-width: 1023px) { #producciones, #nosotros { --h: 2 } }
+  @media (max-width: 639px) { #nosotros { --hm: 2 } #nosotros .develop { aspect-ratio: 9 / 16; } }
+  .footer__legal > span { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  @media (min-width: 640px) and (max-width: 1023px) { main > #temporada[data-moment]:not(.is-live) { height: calc(2 * 100svh); } }
+  @media (max-width: 639px) { main > #temporada[data-moment]:not(.is-live) { height: auto; min-height: calc(2 * 100lvh); } #producciones { --hm: 2 } footer.closing { --hm: 2 } }
+  @media (min-width: 640px) and (max-width: 1023px) { #videos .grid > .video-frame { grid-column: span 6; aspect-ratio: 4 / 5; } }
+  @media (max-width: 359px) { .hero h1 { font-size: 32px; } .hero .hero__over, footer.closing > .wrap { grid-template-columns: minmax(0, 1fr); } .closing__links .grid { grid-template-columns: minmax(0, 1fr); } .closing__links .grid > * { grid-column: 1 / -1; } }
+  @media (min-width: 640px) and (max-width: 1023px) { .closing__links .form { display: flex; flex-wrap: wrap; align-items: end; gap: var(--s-4); } .closing__links .form .field { flex: 1 1 240px; } }
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/pinned-chapters/moment.js">
+<link rel="modulepreload" href="assets/moments/picture-develops/moment.js">
 </head>
 <body>
+<!-- type: service (SO-LA-NA is hired to create and produce flamenco shows: theatres, tours, corporate events)
+     deal: hero film, nav nav-mega, close close-type, footer footer-columns (footer-visit re-dealt: the brief gives no
+     street), rhythm space, buttons tonal, mark: the client's own logo; palette: the client's own colours (start.mjs
+     brand: the bone white and near-black of the SO-LA-NA logo, the gold of the Flamenco Real and Las Minas posters);
+     type red-hat
+     moments: pinned-chapters in #temporada (the season's three productions, one picture each);
+              picture-develops on the #nosotros photograph -->
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="https://so-la-na.com/" aria-label="SO-LA-NA, inicio">
-      <img src="assets/img/logo.png" alt="" width="44" height="44">
-      <span>SO-LA-NA</span>
-    </a>
-    <nav class="nav" aria-label="Principal">
-      <div class="nav-links">
-        <a href="https://so-la-na.com/flamenco-real/">Flamenco Real</a>
-        <a href="https://so-la-na.com/las-minas-tour/">Las Minas Tour</a>
-        <a href="https://so-la-na.com/eventos/">Eventos</a>
-        <a href="#nosotros">Nosotros</a>
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Saltar al contenido</a>
+    <a class="nav__logo" href="#top" aria-label="SO-LA-NA, inicio"><img src="assets/img/logo-dark.png" alt="SO-LA-NA Entertainment" width="250" height="349"></a>
+    <nav class="nav__links" aria-label="Principal">
+      <div class="nav__item">
+        <a class="nav__link" href="#temporada">Espectáculos <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <div class="menu-col span-3">
+              <p class="t-label">Espectáculos</p>
+              <a href="https://so-la-na.com/flamenco-real/">Flamenco Real<span>Temporada en el Teatro Real</span></a>
+              <a href="https://so-la-na.com/las-minas-tour/">Las Minas Tour<span>Gira del Cante de las Minas</span></a>
+              <a href="https://so-la-na.com/authentic-flamenco-by-the-royal-theater-of-madrid/">Authentic Flamenco<span>Gira por Estados Unidos y Canadá</span></a>
+              <a href="https://so-la-na.com/fiesta-flamenca/">Fiesta Flamenca<span>Baile y cena con IFEMA</span></a>
+            </div>
+            <div class="menu-col span-3">
+              <p class="t-label">Más producciones</p>
+              <a href="https://so-la-na.com/seven-seas/">Seven Seas<span>Flamenco a bordo del Atlantis</span></a>
+              <a href="https://so-la-na.com/summer-flamenco-experience/">Summer Flamenco Experience<span>Tres noches en La Manga</span></a>
+              <a href="https://so-la-na.com/club-flamenco-cartagena/">Club Flamenco Cartagena<span>Socios y programación</span></a>
+              <a href="https://so-la-na.com/club-flamenco-murcia/">Club Flamenco Murcia<span>Socios y programación</span></a>
+            </div>
+            <div class="menu-col span-3">
+              <p class="t-label">Servicios</p>
+              <a href="https://so-la-na.com/eventos/">Eventos corporativos<span>Flamenco para empresas</span></a>
+              <a href="https://so-la-na.com/giras/">Giras<span>Nuestros espectáculos por el mundo</span></a>
+              <a href="https://so-la-na.com/produccion-audiovisual/">Audiovisual<span>Espectáculos grabados</span></a>
+              <a href="https://so-la-na.com/mecenazgo/">Mecenazgo<span>Apoya el flamenco</span></a>
+            </div>
+            <a class="menu-card span-3" href="https://drive.google.com/file/d/1pBLk8HGQsV3w8p-tnF6SbmUhYBSUifed/view?usp=sharing">
+              <div class="panel"><img class="frame__img" src="assets/img/flamenco-real-cartel.jpg" alt="Cartel de Flamenco Real, temporada 2026-27" data-source="client" data-subject="cartel de la temporada"></div>
+              <span class="t-card">Libro de Temporada 2026-27</span>
+              <span class="t-small muted">Flamenco Real, del 28 de octubre al 25 de junio</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="lang"><a href="https://so-la-na.com/" aria-current="true">ESP</a><a href="https://so-la-na.com/eng/" hreflang="en">ENG</a></div>
-      <button class="menu-btn" id="menu-open" aria-controls="menu" aria-expanded="false"><i></i>Menú</button>
+      <div class="nav__item"><a class="nav__link" href="#archivo">Archivo</a></div>
+      <div class="nav__item"><a class="nav__link" href="#clientes">Clientes</a></div>
+      <div class="nav__item"><a class="nav__link" href="#nosotros">Nosotros</a></div>
+      <div class="nav__item"><a class="nav__link" href="https://so-la-na.com/noticias/">Noticias</a></div>
     </nav>
+    <div class="nav__actions">
+      <a class="nav__link" href="https://so-la-na.com/eng/" hreflang="en" lang="en">English</a>
+      <a class="btn btn--primary" href="mailto:info@so-la-na.com">Contratar un espectáculo</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menú">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
-  <div class="wrap">
-    <div class="menu-head">
-      <a class="brand" href="https://so-la-na.com/"><img src="assets/img/logo.png" alt="" width="44" height="44"><span>SO-LA-NA</span></a>
-      <button class="menu-btn" id="menu-close">Cerrar</button>
-    </div>
-    <div class="menu-grid">
-      <div>
-        <h2>Espectáculos</h2>
-        <ul>
-          <li><a href="https://so-la-na.com/flamenco-real/">Flamenco Real</a></li>
-          <li><a href="https://so-la-na.com/las-minas-tour/">Las Minas Tour</a></li>
-          <li><a href="https://so-la-na.com/authentic-flamenco-by-the-royal-theater-of-madrid/">Authentic Flamenco</a></li>
-          <li><a href="https://so-la-na.com/fiesta-flamenca/">Fiesta Flamenca</a></li>
-          <li><a href="https://so-la-na.com/seven-seas/">Seven Seas</a></li>
-          <li><a href="https://so-la-na.com/summer-flamenco-experience/">Summer Flamenco Experience</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Servicios</h2>
-        <ul>
-          <li><a href="https://so-la-na.com/eventos/">Eventos Corporativos</a></li>
-          <li><a href="https://so-la-na.com/giras/">Giras</a></li>
-          <li><a href="https://so-la-na.com/produccion-audiovisual/">Audiovisual</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Clubs</h2>
-        <ul>
-          <li><a href="https://so-la-na.com/club-flamenco-cartagena/">Club Flamenco Cartagena</a></li>
-          <li><a href="https://so-la-na.com/club-flamenco-murcia/">Club Flamenco Murcia</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>SO-LA-NA</h2>
-        <ul>
-          <li><a href="#nosotros" data-close>Nosotros</a></li>
-          <li><a href="#manifiesto" data-close>Manifiesto</a></li>
-          <li><a href="#clientes" data-close>Clientes</a></li>
-          <li><a href="https://so-la-na.com/noticias/">Noticias</a></li>
-          <li><a href="https://so-la-na.com/mecenazgo/">Mecenazgo</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<main id="contenido">
-
-  <section class="hero" aria-labelledby="hero-title">
-    <img class="hero-poster" src="assets/img/hero-poster.jpg" alt="">
-    <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
-    <div class="wrap">
-      <p class="kicker">Creamos espectáculos</p>
-      <h1 id="hero-title">conceptos artísticos <em>exclusivos</em></h1>
-      <div class="hero-bar">
-        <a class="btn btn--solid" href="#en-cartel">Ver la temporada</a>
-        <button class="vid-ctrl" id="vid-toggle" aria-pressed="false">Pausar vídeo</button>
-      </div>
-    </div>
-  </section>
-
-  <div class="season">
-    <div class="wrap">
-      <p><b>IX Temporada</b> de Flamenco Real <small>Del 28 de octubre al 25 de junio · Teatro Real, Madrid</small></p>
-      <a class="btn" href="https://drive.google.com/file/d/1pBLk8HGQsV3w8p-tnF6SbmUhYBSUifed/view?usp=sharing" target="_blank" rel="noopener">Descarga el Libro de Temporada 2026-27</a>
-    </div>
-  </div>
-
-  <section class="section" id="en-cartel" aria-labelledby="cartel-title">
-    <div class="wrap">
-      <div class="section-head">
-        <div style="display:grid;gap:14px">
-          <p class="eyebrow">En cartel · 2026–27</p>
-          <h2 id="cartel-title">Lo que está <em>en escena</em></h2>
-        </div>
-      </div>
-
-      <article class="show fr" id="flamenco-real">
-        <div class="show-media fr-media">
-          <a href="https://so-la-na.com/flamenco-real/"><img class="poster" src="assets/img/flamenco-real-cartel.jpg" alt="Cartel de Flamenco Real, temporada 26/27, Teatro Real, coproduce SO-LA-NA Entertainment" width="695" height="945" loading="lazy"></a>
-        </div>
-        <div class="show-body">
-          <p class="eyebrow">IX Temporada · Teatro Real</p>
-          <h3>Flamenco Real</h3>
-          <p class="tag">“La tradición que hace libre al flamenco”</p>
-          <div class="figures" role="list">
-            <div role="listitem"><b>9</b><span>producciones</span></div>
-            <div role="listitem"><b>31</b><span>espectáculos</span></div>
-            <div role="listitem"><b>19</b><span>cabezas de cartel</span></div>
-            <div role="listitem"><b>8.500</b><span>espectadores en ediciones anteriores</span></div>
+<main id="top">
+  <section class="hero hero--film" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__in">
+      <div class="hero__media hero__fill">
+        <img src="assets/img/hero-poster.jpg" alt="Una bailaora con bata de cola en el escenario, con músicos al fondo" style="--ly-pos: 50% 40%; --ly-pos-phone: 50% 40%" fetchpriority="high" data-source="client" data-subject="espectáculo de flamenco en escena">
+        <div class="hero__over">
+          <div>
+            <h1 id="hero-h">Producción de espectáculos de flamenco</h1>
+            <p class="hero__lead">Creamos conceptos artísticos exclusivos para teatros, giras y empresas. Esta temporada, la novena de Flamenco Real en el Teatro Real, del 28 de octubre al 25 de junio.</p>
+            <div class="btn-row"><a class="btn btn--primary" href="mailto:info@so-la-na.com">Contratar un espectáculo<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a></div>
           </div>
-          <p>Nueve producciones. 31 espectáculos. 19 cabezas de cartel, el baile, el toque, el cante y la percusión. Del 28 de octubre al 25 de junio, <strong>el Salón de Baile de Isabel II vuelve a ser el tablao más singular de España.</strong></p>
-          <p>El cantaor Arcángel, inaugura una temporada que renueva su alianza con nueve instituciones históricas del flamenco —peñas, festivales y fundaciones— y que llega a su novena edición tras reunir a cerca de 8.500 espectadores y duplicar el número de funciones desde 2022.</p>
-          <figure style="margin:8px 0 0;display:grid;gap:10px">
-            <img class="fr-photo" src="assets/img/flamenco-real-presentacion.jpg" alt="Presentación de la temporada 26/27 de Flamenco Real en el escenario" width="1200" height="800" loading="lazy">
-            <figcaption class="caption">Presentación de la temporada 2026–27.</figcaption>
-          </figure>
-          <div class="show-actions">
-            <a class="btn btn--solid" href="https://so-la-na.com/flamenco-real/">+ info</a>
-            <a class="link" href="https://drive.google.com/file/d/1pBLk8HGQsV3w8p-tnF6SbmUhYBSUifed/view?usp=sharing" target="_blank" rel="noopener">Libro de Temporada 2026-27</a>
-          </div>
+          <button class="ly-play" type="button" data-film="assets/hero.mp4">
+            <span class="ly-play__disc"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4.5 2.6v12.8c0 .8.9 1.3 1.6.9l10.3-6.4c.6-.4.6-1.3 0-1.7L6.1 1.7c-.7-.4-1.6.1-1.6.9Z" fill="currentColor"/></svg></span>
+            <span class="ly-play__label">Ver el vídeo<small>SO-LA-NA en escena, 0:12</small></span>
+          </button>
         </div>
-      </article>
+      </div>
+    </div></div>
+  </section>
 
-      <article class="show" id="las-minas">
-        <div class="show-media">
-          <a href="https://so-la-na.com/las-minas-tour/"><img src="assets/img/las-minas-tour.jpg" alt="Las Minas Tour, la gira del Festival Internacional del Cante de las Minas, gira 26 27" width="1200" height="800" loading="lazy"></a>
-        </div>
-        <div class="show-body">
-          <p class="eyebrow">Gira 2026–2027</p>
-          <h3>Las Minas Tour</h3>
-          <p class="tag">El flamenco toma los escenarios</p>
-          <p>El Festival Internacional del Cante de las Minas presenta su gira 2026–2027, una gran producción de SO-LA-NA Entertainment, bajo la dirección artística de <strong>Eduardo Guerrero</strong>.</p>
-          <p>Nueve artistas vinculados a uno de los festivales flamencos más prestigiosos del mundo reúnen cante, baile, guitarra, flauta y percusión en un espectáculo que lleva la fuerza y la emoción del flamenco a algunos de los grandes teatros de España.</p>
-          <p>Una gira que nace de la tradición para conquistar nuevos escenarios y públicos.</p>
-          <div class="show-actions"><a class="btn btn--solid" href="https://so-la-na.com/las-minas-tour/">+ info</a></div>
-        </div>
-      </article>
-
-      <article class="show" id="refugiate">
-        <div class="show-media">
-          <a href="https://www.veranosdelavilla.com/es/evento/refugiate-en-la-cultura" target="_blank" rel="noopener"><img src="assets/img/refugiate.jpg" alt="Cartel de Refúgiate en la Cultura, Ayuntamiento de Madrid" width="1200" height="800" loading="lazy"></a>
-        </div>
-        <div class="show-body">
-          <p class="eyebrow">Patrocinio · Veranos de la Villa</p>
-          <h3>Refúgiate en la Cultura</h3>
-          <p>SO-LA-NA patrocina de nuevo el programa “Refúgiate en la Cultura”, disfrutamos del mejor flamenco en <strong>los seis museos más emblemáticos de Madrid entre las 15 y 17 hrs.</strong></p>
-          <p>Una propuesta del Área de Gobierno de Cultura, Turismo y Deporte del Ayuntamiento de Madrid que convierte el verano en una invitación a disfrutar del arte y el conocimiento para evitar las altas temperaturas.</p>
-          <div class="show-actions"><a class="btn btn--solid" href="https://www.veranosdelavilla.com/es/evento/refugiate-en-la-cultura" target="_blank" rel="noopener">+ info</a></div>
-        </div>
-      </article>
+  <!-- pinned-chapters: the season's three productions, a picture each -->
+  <section class="section" id="temporada" style="--h: 2" data-moment="pinned-chapters" aria-labelledby="temporada-h">
+    <div class="wrap mo-pc__grid">
+      <div class="mo-pc__text">
+        <h2 id="temporada-h">Temporada 2026-27 en tres producciones</h2>
+        <ol class="mo-pc__steps">
+          <li class="mo-pc__step">
+            <h3>Flamenco Real, en el Teatro Real</h3>
+            <p>Nueve producciones y 31 espectáculos en el Salón de Baile de Isabel II, del 28 de octubre al 25 de junio. Abre el cantaor Arcángel. <a class="link" href="https://so-la-na.com/flamenco-real/">Ver Flamenco Real</a> · <a class="link" href="https://drive.google.com/file/d/1pBLk8HGQsV3w8p-tnF6SbmUhYBSUifed/view?usp=sharing">Descargar el Libro de Temporada</a></p>
+            <figure class="mo-pc__visual"><img src="assets/img/flamenco-real-presentacion.jpg" alt="Artistas y organizadores en la presentación de la temporada de Flamenco Real, sobre el escenario" width="1200" height="800" data-source="client" data-subject="presentación de Flamenco Real"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Las Minas Tour, de gira por España</h3>
+            <p>La gira del Festival Internacional del Cante de las Minas: nueve artistas bajo la dirección artística de Eduardo Guerrero, en grandes teatros de España. <a class="link" href="https://so-la-na.com/las-minas-tour/">Ver Las Minas Tour</a></p>
+            <figure class="mo-pc__visual"><img src="assets/img/las-minas-tour.jpg" alt="Cartel de Las Minas Tour, gira 26 27: los zapatos de un bailaor sobre el escenario" width="1200" height="800" data-source="client" data-subject="cartel de Las Minas Tour"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Flamenco en seis museos de Madrid</h3>
+            <p>Patrocinamos de nuevo Refúgiate en la Cultura, del Ayuntamiento de Madrid: flamenco en verano, de 15 a 17 h. <a class="link" href="https://www.veranosdelavilla.com/es/evento/refugiate-en-la-cultura">Ver el programa</a></p>
+            <figure class="mo-pc__visual"><img src="assets/img/refugiate.jpg" alt="Cartel de Refúgiate en la Cultura, del Ayuntamiento de Madrid" width="1200" height="800" data-source="client" data-subject="cartel de Refúgiate en la Cultura"></figure>
+          </li>
+        </ol>
+      </div>
+      <div class="mo-pc__visuals frame"></div>
     </div>
   </section>
 
-  <section class="section" id="noticias" aria-labelledby="noticias-title" style="padding-top:0">
+  <section class="section" id="producciones" aria-labelledby="producciones-h">
+    <div class="wrap grid grid--top">
+      <div class="span-6">
+        <div class="section-head">
+          <h2 id="producciones-h">Espectáculos y servicios</h2>
+          <p>Desde 2011 llevamos el flamenco a teatros, festivales, barcos y empresas, en España y fuera.</p>
+        </div>
+        <ul class="rows">
+          <li><a class="rows__name" href="https://so-la-na.com/authentic-flamenco-by-the-royal-theater-of-madrid/">Authentic Flamenco<small>Gira por 21 ciudades de Estados Unidos y Canadá</small></a></li>
+          <li><a class="rows__name" href="https://so-la-na.com/fiesta-flamenca/">Fiesta Flamenca<small>Baile y cena degustación, coproducido con IFEMA Madrid Live</small></a></li>
+          <li><a class="rows__name" href="https://so-la-na.com/seven-seas/">Seven Seas<small>Cartagena, Almería, Málaga y Cádiz a bordo del bergantín Atlantis</small></a></li>
+          <li><a class="rows__name" href="https://so-la-na.com/summer-flamenco-experience/">Summer Flamenco Experience<small>Tres noches de agosto en Trips Summer Club, La Manga</small></a></li>
+          <li><a class="rows__name" href="https://so-la-na.com/eventos/">Eventos corporativos<small>Del Círculo de Bellas Artes de Madrid al Museo de Arte Moderno de Chile</small></a></li>
+          <li><a class="rows__name" href="https://so-la-na.com/giras/">Giras<small>Nuestros espectáculos, de abril a octubre por el mundo</small></a></li>
+          <li><a class="rows__name" href="https://so-la-na.com/produccion-audiovisual/">Producción audiovisual<small>Farruquito en el Teatro Real, 1 h 53 min</small></a></li>
+        </ul>
+      </div>
+      <div class="frame frame--photo span-6 start-7">
+        <img class="frame__img" src="assets/img/flamenco-real-cartel.jpg" alt="Cartel de Flamenco Real 26/27: una pareja de baile con traje dorado y bata negra" width="695" height="945" loading="lazy" data-source="client" data-subject="cartel de Flamenco Real">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="archivo" aria-labelledby="archivo-h">
     <div class="wrap">
       <div class="section-head">
-        <div style="display:grid;gap:14px">
-          <p class="eyebrow">Prensa</p>
-          <h2 id="noticias-title">Noticias destacadas</h2>
-        </div>
-        <a class="link" href="https://so-la-na.com/noticias/">Todas las noticias</a>
+        <h2 id="archivo-h">Archivo de Flamenco Real</h2>
+        <p>Anteriores: <a href="https://so-la-na.com/project/fr-18/">FR 18</a>, <a href="https://so-la-na.com/project/fr-17/">FR 17</a>, <a href="https://so-la-na.com/project/fr-16/">FR 16</a>, <a href="https://so-la-na.com/project/fr-15/">FR 15</a>, <a href="https://so-la-na.com/project/fr-14/">FR 14</a>, <a href="https://so-la-na.com/project/fr-12-2/">FR 13</a>, <a href="https://so-la-na.com/project/fr-12/">FR 12</a>, <a href="https://so-la-na.com/project/fr-10/">FR 10</a>, <a href="https://so-la-na.com/project/fr-9-2/">FR 9</a>, <a href="https://so-la-na.com/project/fr-9/">FR 9</a>, <a href="https://so-la-na.com/project/fr-7/">FR 7</a>, <a href="https://so-la-na.com/project/fr-6/">FR 6</a>, <a href="https://so-la-na.com/project/fr-4/">FR 4</a>, <a href="https://so-la-na.com/project/fr-3/">FR 3</a>, <a href="https://so-la-na.com/project/fr-2/">FR 2</a> y <a href="https://so-la-na.com/project/fr-1/">FR 1</a>.</p>
       </div>
-      <div class="press">
-        <a href="https://www.abc.es/cultura/teatros/flamenco-real-tradicion-libre-flamenco-20260910155115-nt.html" target="_blank" rel="noopener">
-          <div class="thumb"><img src="assets/img/abc.jpg" alt="" loading="lazy"></div>
-          <div class="meta"><span>ABC Cultura</span><strong>Flamenco Real, la tradición que hace libre al flamenco</strong></div>
-        </a>
-        <a href="https://newsroom.feverup.com/en-US/249346-authentic-flamenco-from-coast-to-coast/" target="_blank" rel="noopener">
-          <div class="thumb"><img src="assets/img/fever.jpg" alt="" loading="lazy"></div>
-          <div class="meta"><span>Fever Newsroom</span><strong>Authentic Flamenco, from coast to coast</strong></div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=gq0VwZsNoaw" target="_blank" rel="noopener">
-          <div class="thumb"><div class="play" aria-hidden="true"></div></div>
-          <div class="meta"><span>Vídeo · YouTube</span><strong>Ver en nuestro canal de YouTube</strong></div>
-        </a>
+      <div class="grid grid--top archive">
+        <a class="frame frame--photo m-zoom span-5 trio-a" href="https://so-la-na.com/project/fr-22/" aria-label="FR 22"><img class="frame__img" src="assets/img/archivo-fr-22.jpg" alt="Bailaora con bata de cola en Flamenco Real 22" loading="lazy" data-source="client" data-subject="Flamenco Real 22"></a>
+        <a class="frame frame--photo m-zoom span-4 trio-b" href="https://so-la-na.com/project/fr-21/" aria-label="FR 21"><img class="frame__img" src="assets/img/archivo-fr-21.jpg" alt="Bailaora con los brazos abiertos bajo el rótulo de Flamenco Real" loading="lazy" data-source="client" data-subject="Flamenco Real 21"></a>
+        <a class="frame frame--photo m-zoom span-3 trio-c" href="https://so-la-na.com/project/fr-20/" aria-label="FR 20"><img class="frame__img" src="assets/img/archivo-fr-20.jpg" alt="Bailaora girando con falda de volantes" loading="lazy" data-source="client" data-subject="Flamenco Real 20"></a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="archivo" aria-labelledby="archivo-title" style="padding-top:0">
+  <section class="section" id="clientes" aria-labelledby="clientes-h">
     <div class="wrap">
       <div class="section-head">
-        <div style="display:grid;gap:14px">
-          <p class="eyebrow">Archivo</p>
-          <h2 id="archivo-title">Flamenco Real, <em>función a función</em></h2>
-        </div>
-        <p>Todas las producciones de Flamenco Real desde la primera.</p>
+        <h2 id="clientes-h">Clientes de SO-LA-NA y prensa</h2>
+        <p>Empresas con las que trabajamos: el hospitality por excelencia, de Iberia e InterContinental al Teatro Real.</p>
       </div>
-      <div class="archive">
-        <a class="big" href="https://so-la-na.com/project/fr-22/"><img src="assets/img/archivo-fr-22.jpg" alt="" loading="lazy"><span><small>FR</small>22</span></a>
-        <a class="big" href="https://so-la-na.com/project/fr-21/"><img src="assets/img/archivo-fr-21.jpg" alt="" loading="lazy"><span><small>FR</small>21</span></a>
-        <a href="https://so-la-na.com/project/fr-20/"><img src="assets/img/archivo-fr-20.jpg" alt="" loading="lazy"><span><small>FR</small>20</span></a>
-        <a href="https://so-la-na.com/project/fr-18/"><img src="assets/img/archivo-fr-18.jpg" alt="" loading="lazy"><span><small>FR</small>18</span></a>
-        <a href="https://so-la-na.com/project/fr-17/"><img src="assets/img/archivo-fr-17.jpg" alt="" loading="lazy"><span><small>FR</small>17</span></a>
-        <a href="https://so-la-na.com/project/fr-16/"><img src="assets/img/archivo-fr-16.jpg" alt="" loading="lazy"><span><small>FR</small>16</span></a>
-        <a href="https://so-la-na.com/project/fr-15/"><img src="assets/img/archivo-fr-15.jpeg" alt="Yolanda Osuna y Amador Rojas" loading="lazy"><span><small>FR</small>15</span></a>
-        <a href="https://so-la-na.com/project/fr-14/"><img src="assets/img/archivo-fr-14.jpg" alt="" loading="lazy"><span><small>FR</small>14</span></a>
-        <a href="https://so-la-na.com/project/fr-12-2/"><img src="assets/img/archivo-fr-12-2.jpg" alt="" loading="lazy"><span><small>FR</small>13</span></a>
-        <a href="https://so-la-na.com/project/fr-12/"><img src="assets/img/archivo-fr-12.jpg" alt="Rosario Toledo" loading="lazy"><span><small>FR</small>12</span></a>
-        <a href="https://so-la-na.com/project/fr-10/"><img src="assets/img/archivo-fr-10.jpg" alt="" loading="lazy"><span><small>FR</small>10</span></a>
-        <a href="https://so-la-na.com/project/fr-9-2/"><img src="assets/img/archivo-fr-9-2.jpg" alt="" loading="lazy"><span><small>FR</small>9</span></a>
-        <a href="https://so-la-na.com/project/fr-9/"><img src="assets/img/archivo-fr-9.jpg" alt="" loading="lazy"><span><small>FR</small>9</span></a>
-        <a href="https://so-la-na.com/project/fr-7/"><img src="assets/img/archivo-fr-7.jpg" alt="" loading="lazy"><span><small>FR</small>7</span></a>
-        <a href="https://so-la-na.com/project/fr-6/"><img src="assets/img/archivo-fr-6.jpeg" alt="Amador Rojas" loading="lazy"><span><small>FR</small>6</span></a>
-        <a href="https://so-la-na.com/project/fr-4/"><img src="assets/img/archivo-fr-4.jpg" alt="Port Adriano Music Festival, flamenco" loading="lazy"><span><small>FR</small>4</span></a>
-        <a href="https://so-la-na.com/project/fr-3/"><img src="assets/img/archivo-fr-3.jpg" alt="" loading="lazy"><span><small>FR</small>3</span></a>
-        <a href="https://so-la-na.com/project/fr-2/"><img src="assets/img/archivo-fr-2.jpg" alt="" loading="lazy"><span><small>FR</small>2</span></a>
-        <a href="https://so-la-na.com/project/fr-1/"><img src="assets/img/archivo-fr-1.jpg" alt="" loading="lazy"><span><small>FR</small>1</span></a>
+      <div class="grid grid--top">
+        <div class="span-6 stack-5">
+          <p><a class="link" href="https://www.abc.es/cultura/teatros/flamenco-real-tradicion-libre-flamenco-20260910155115-nt.html">ABC: Flamenco Real, la tradición que hace libre al flamenco</a></p>
+          <p><a class="link" href="https://newsroom.feverup.com/en-US/249346-authentic-flamenco-from-coast-to-coast/" lang="en">Fever: Authentic Flamenco, from coast to coast</a></p>
+          <p><a class="link" href="https://www.youtube.com/watch?v=gq0VwZsNoaw">Ver el vídeo en YouTube</a></p>
+        </div>
+        <div class="span-6 start-7 logos-wall">
+          <img src="assets/img/clientes.jpg" alt="Logotipos de clientes: Ership, Acciona, Herbert Smith Freehills Kramer, Fundación Redexis, QeChic, Grupo Index, Crédit Agricole, BME, InterContinental, Grupo Corporalia, Leaderland, STV, Teatro Real, Network Steel, Tecopsa, Talasur, Ibermed, Viñas Familia Gil, Port Adriano, Cesce, Iberia, El Confidencial, Tequila Herradura, Onda Cero, Brands &amp; Rights 360, Copernicus, ON Soluciones, Caballero Ventura, Grupo Cuñado, Normetal, Crisalion Mobility, Menttoriza, Ebara, Reale Seguros y Sercocivil" width="1280" height="555" data-source="client" data-subject="logotipos de clientes">
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section clients" id="clientes" aria-labelledby="clientes-title">
+  <section class="section" id="nosotros" aria-labelledby="nosotros-h">
+    <div class="wrap grid grid--top">
+      <div class="span-6 stack-5">
+        <div class="section-head">
+          <h2 id="nosotros-h">SO-LA-NA Entertainment desde 2011</h2>
+        </div>
+        <p>SO-LA-NA Entertainment es referente en la creación y producción de espectáculos exclusivos. Desarrollamos experiencias para que trasciendan en el arte flamenco, el escénico y el musical en general, persiguiendo la singularidad, la brillantez y la autenticidad en su puesta en escena.</p>
+        <p>En 2011 iniciamos nuestra andadura con la internacionalización del Festival del Cante de las Minas con “Las Minas Flamenco Tour”, espectáculo que se presentó en Japón, India y en diversas ciudades europeas y está reconocido como Marca España.</p>
+        <p>Formamos parte de Amigos de Solana, una comunidad internacional para los amantes del sol, del flamenco, del vino, del aceite de oliva, de la moda y del arte con herencia española.</p>
+        <p><a class="link" href="https://amigosdesolana.com">Unirse a Amigos de Solana</a></p>
+      </div>
+      <figure class="develop span-6 start-7" data-moment="picture-develops"><img src="assets/img/archivo-fr-12.jpg" alt="La bailaora Rosario Toledo en escena" width="600" height="900" loading="lazy" data-source="client" data-subject="Rosario Toledo en Flamenco Real"></figure>
+    </div>
+  </section>
+
+  <section class="section" id="videos" aria-labelledby="videos-h">
     <div class="wrap">
       <div class="section-head">
-        <div style="display:grid;gap:14px">
-          <p class="eyebrow">Clientes</p>
-          <h2 id="clientes-title">Empresas con las que trabajamos</h2>
-        </div>
-        <p>El “hospitality” por excelencia.</p>
+        <h2 id="videos-h">Flamenco Real en vídeo</h2>
+        <p>A la izquierda, un resumen de Flamenco Real. A la derecha, Eduardo Guerrero con su Desplante en el Teatro Real de Madrid.</p>
       </div>
-      <img src="assets/img/clientes.jpg" alt="Logotipos de clientes: Ership Grupo, Acciona, Herbert Smith Freehills Kramer, Fundación Redexis, QeChic, Grupo Index, Crédit Agricole, BME, InterContinental Hotels &amp; Resorts, Grupo Corporalia, Leaderland, STV, Teatro Real, Network Steel, Tecopsa, Talasur Group, Ibermed, Viñas Familia Gil, Port Adriano, Cesce, Iberia, El Confidencial, Tequila Herradura, Onda Cero, Brands &amp; Rights 360, Copernicus, ON Soluciones, Caballero Ventura, Grupo Cuñado, Normetal, Crisalion Mobility, Menttoriza, Ebara, Reale Seguros, Sercocivil" width="1800" height="779" loading="lazy">
-    </div>
-  </section>
-
-  <section class="section" id="nosotros" aria-labelledby="nosotros-title">
-    <div class="wrap about" id="manifiesto">
-      <div style="display:grid;gap:18px;align-content:start">
-        <p class="eyebrow">Nosotros · Manifiesto</p>
-        <h2 id="nosotros-title">SO-LA-NA. Entertainment es referente en la creación y producción de <em>espectáculos exclusivos</em>.</h2>
-      </div>
-      <div class="about-body">
-        <p>Desarrollamos experiencias para que trasciendan en el arte flamenco, el escénico y el musical en general, persiguiendo la singularidad, la brillantez y la autenticidad en su puesta en escena.</p>
-        <p class="milestone">En 2011 iniciamos nuestra andadura con la internacionalización del Festival del Cante de las Minas con “Las Minas Flamenco Tour”, espectáculo que se presentó en Japón, India y en diversas ciudades europeas y está reconocido como Marca España.</p>
-        <div class="amigos">
-          <p class="eyebrow">Amigos de Solana</p>
-          <p>SOLANA Entertainment es parte de «Amigos de Solana», una comunidad internacional apasionada por las cosas extraordinarias de la vida con herencia española. Un punto de encuentro para los amantes del sol, del flamenco, del vino, del aceite de oliva, de la moda, del arte, y, en esencia, ¡de la vida! ¡Únete a nuestro club!</p>
-          <div><a class="btn" href="https://amigosdesolana.com" target="_blank" rel="noopener">amigosdesolana.com</a></div>
-        </div>
+      <div class="grid">
+        <div class="video-frame span-6"><video controls preload="none" playsinline poster="assets/img/archivo-fr-14.jpg" aria-label="Resumen de Flamenco Real"><source src="https://so-la-na.com/wp-content/uploads/2025/04/FR-para-web.mp4" type="video/mp4"></video></div>
+        <div class="video-frame span-6"><video controls preload="none" playsinline poster="assets/img/archivo-fr-10.jpg" aria-label="Eduardo Guerrero con su Desplante en el Teatro Real de Madrid"><source src="https://so-la-na.com/wp-content/uploads/2024/05/Eduardo-Guerrero-con-su-Desplante-en-el-Teatro-Real-de-Madrid-14-1-20.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </section>
-
-  <section class="section" id="videos" aria-labelledby="videos-title" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <div style="display:grid;gap:14px">
-          <p class="eyebrow">En vídeo</p>
-          <h2 id="videos-title">Desde el escenario</h2>
-        </div>
-      </div>
-      <div class="videos">
-        <div class="video-card">
-          <video controls preload="none" poster="assets/img/archivo-fr-22.jpg"><source src="https://so-la-na.com/wp-content/uploads/2025/04/FR-para-web.mp4" type="video/mp4"></video>
-          <p>Flamenco Real. <a class="link" href="https://so-la-na.com/wp-content/uploads/2025/04/FR-para-web.mp4" target="_blank" rel="noopener">Abrir vídeo</a></p>
-        </div>
-        <div class="video-card">
-          <video controls preload="none" poster="assets/img/archivo-fr-14.jpg"><source src="https://so-la-na.com/wp-content/uploads/2024/05/Eduardo-Guerrero-con-su-Desplante-en-el-Teatro-Real-de-Madrid-14-1-20.mp4" type="video/mp4"></video>
-          <p>Eduardo Guerrero con su Desplante en el Teatro Real de Madrid. <a class="link" href="https://so-la-na.com/wp-content/uploads/2024/05/Eduardo-Guerrero-con-su-Desplante-en-el-Teatro-Real-de-Madrid-14-1-20.mp4" target="_blank" rel="noopener">Abrir vídeo</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<footer class="foot">
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <a class="brand" href="https://so-la-na.com/"><img src="assets/img/logo.png" alt="" width="44" height="44"><span>SO-LA-NA</span></a>
-        <form class="news-form" id="newsletter" action="https://so-la-na.com/wp-admin/admin-ajax.php?action=tnp&amp;na=s" method="post">
-          <input type="hidden" name="nr" value="widget-minimal">
-          <label for="news-email">Newsletter: recibe la programación y las novedades de SO-LA-NA.</label>
-          <input id="news-email" class="tnp-email" type="email" name="ne" required placeholder="Tu email" autocomplete="email">
-          <button class="btn btn--solid" type="submit">Suscribirse</button>
-          <p class="news-msg" id="news-msg" role="status" hidden></p>
-        </form>
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Un espectáculo de flamenco para tu teatro o evento</h2>
+        <p>Teatros, festivales, giras y eventos corporativos. Escríbenos a info@so-la-na.com.</p>
       </div>
-      <div>
-        <h2>Explora</h2>
-        <ul>
-          <li><a href="https://so-la-na.com/flamenco-real/">Flamenco Real</a></li>
-          <li><a href="https://so-la-na.com/las-minas-tour/">Las Minas Tour</a></li>
-          <li><a href="https://so-la-na.com/eventos/">Eventos Corporativos</a></li>
-          <li><a href="https://so-la-na.com/giras/">Giras</a></li>
-          <li><a href="https://so-la-na.com/produccion-audiovisual/">Audiovisual</a></li>
-          <li><a href="https://so-la-na.com/mecenazgo/">Mecenazgo</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>¡Síguenos!</h2>
-        <ul>
-          <li><a href="https://www.instagram.com/solana_flamenco/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.facebook.com/SOLANAEntertainment" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://www.youtube.com/channel/UCkSQN-7aaH2-I9dD6h0YoyA" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://www.linkedin.com/company/so-la-na-entertainment" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://twitter.com/home" target="_blank" rel="noopener">X / Twitter</a></li>
-        </ul>
-      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="mailto:info@so-la-na.com">Contratar un espectáculo<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
-    <div class="legal">
-      <span>Copyright © 2026 SO-LA-NA</span>
-      <nav aria-label="Legal">
-        <a href="https://so-la-na.com/aviso-legal/">Aviso Legal</a>
-        <a href="https://so-la-na.com/politica-de-privacidad/">Política de privacidad</a>
-        <a href="https://so-la-na.com/politica-de-cookies/">Política de cookies</a>
-      </nav>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top" aria-label="SO-LA-NA, inicio"><img src="assets/img/logo-dark.png" alt="SO-LA-NA Entertainment" width="250" height="349"></a>
+          <form class="form" action="https://so-la-na.com/wp-admin/admin-ajax.php?action=tnp&amp;na=s" method="post" data-endpoint="https://so-la-na.com/wp-admin/admin-ajax.php?action=tnp&amp;na=s" data-sent="Suscripción enviada. Revisa tu correo para confirmarla." novalidate>
+            <input type="hidden" name="nr" value="widget-minimal">
+            <div class="field"><label for="f-email">Email para la newsletter</label>
+              <input id="f-email" name="ne" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+              <p class="field__error" id="f-email-err" hidden>Escribe un email con @, como nombre@ejemplo.com.</p></div>
+            <div class="btn-row"><button class="btn btn--secondary" type="submit">Suscribirse</button></div>
+            <p class="form__status" role="status" data-form-status></p>
+          </form>
+        </div>
+        <div class="span-2 footer__col"><h3>Espectáculos</h3><ul><li><a href="https://so-la-na.com/flamenco-real/">Flamenco Real</a></li><li><a href="https://so-la-na.com/las-minas-tour/">Las Minas Tour</a></li><li><a href="https://so-la-na.com/authentic-flamenco-by-the-royal-theater-of-madrid/">Authentic Flamenco</a></li><li><a href="https://so-la-na.com/fiesta-flamenca/">Fiesta Flamenca</a></li><li><a href="https://so-la-na.com/seven-seas/">Seven Seas</a></li><li><a href="https://so-la-na.com/summer-flamenco-experience/">Summer Flamenco Experience</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Servicios</h3><ul><li><a href="https://so-la-na.com/eventos/">Eventos corporativos</a></li><li><a href="https://so-la-na.com/giras/">Giras</a></li><li><a href="https://so-la-na.com/produccion-audiovisual/">Audiovisual</a></li><li><a href="https://so-la-na.com/mecenazgo/">Mecenazgo</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Clubs</h3><ul><li><a href="https://so-la-na.com/club-flamenco-cartagena/">Club Flamenco Cartagena</a></li><li><a href="https://so-la-na.com/club-flamenco-murcia/">Club Flamenco Murcia</a></li><li><a href="https://amigosdesolana.com">Amigos de Solana</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Síguenos</h3><ul><li><a href="https://www.instagram.com/solana_flamenco/">Instagram</a></li><li><a href="https://www.facebook.com/SOLANAEntertainment">Facebook</a></li><li><a href="https://www.youtube.com/channel/UCkSQN-7aaH2-I9dD6h0YoyA">YouTube</a></li><li><a href="https://www.linkedin.com/company/so-la-na-entertainment">LinkedIn</a></li><li><a href="https://so-la-na.com/noticias/">Noticias</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span><span>&copy; 2026 SO-LA-NA</span><a href="https://so-la-na.com/aviso-legal/">Aviso legal</a><a href="https://so-la-na.com/politica-de-privacidad/">Privacidad</a><a href="https://so-la-na.com/politica-de-cookies/">Cookies</a></span>
+        <div class="socials"></div>
+      </div>
     </div>
   </div>
 </footer>
 
-<div class="cookies" id="cookies" hidden>
-  <div class="wrap">
-    <p>Este sitio web utiliza cookies para que usted tenga la mejor experiencia de usuario. Si continúa navegando está dando su consentimiento para la aceptación de las mencionadas cookies y la aceptación de nuestra <a href="https://so-la-na.com/politica-de-cookies/">política de cookies</a>.</p>
-    <button class="btn btn--solid" id="cookies-ok">Aceptar</button>
-  </div>
-</div>
-
-<script>
-(function(){
-  // Menú
-  var menu=document.getElementById('menu'),open=document.getElementById('menu-open'),close=document.getElementById('menu-close');
-  function setMenu(on){menu.hidden=!on;open.setAttribute('aria-expanded',on);document.body.style.overflow=on?'hidden':'';(on?close:open).focus();}
-  open.addEventListener('click',function(){setMenu(true)});
-  close.addEventListener('click',function(){setMenu(false)});
-  menu.querySelectorAll('[data-close]').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden)setMenu(false)});
-
-  // Vídeo de portada
-  var v=document.getElementById('hero-video'),t=document.getElementById('vid-toggle');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.pause();v.removeAttribute('autoplay');t.textContent='Reproducir vídeo';t.setAttribute('aria-pressed','true');}
-  t.addEventListener('click',function(){if(v.paused){v.play();t.textContent='Pausar vídeo';t.setAttribute('aria-pressed','false');}else{v.pause();t.textContent='Reproducir vídeo';t.setAttribute('aria-pressed','true');}});
-
-  // Aviso de cookies
-  var c=document.getElementById('cookies'),seen=false;
-  try{seen=localStorage.getItem('solana-cookies')==='1'}catch(e){}
-  if(!seen)c.hidden=false;
-  document.getElementById('cookies-ok').addEventListener('click',function(){c.hidden=true;try{localStorage.setItem('solana-cookies','1')}catch(e){}});
-})();
-</script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
 </body>
 </html>

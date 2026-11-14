@@ -1,0 +1,4 @@
+.taste-skill/*
+!.taste-skill/history.json
+!.taste-skill/layout-history.json
+node_modules/
