@@ -215,19 +215,20 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
 .pick{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:6px 6px;border-bottom:1px solid #cdbd9f;cursor:pointer;border-radius:6px;transition:background .25s}
 .pick:hover,.pick.is-hover{background:rgba(165,83,47,.07)}
 .pick input{position:absolute;opacity:0;width:1px;height:1px}
-.pick__box{width:26px;height:26px;border:1.6px solid var(--graphite);border-radius:4px 7px 5px 6px;display:grid;place-items:center;transform:rotate(-2deg);transition:background .2s}
-.pick__box svg{width:22px;height:22px;fill:none;stroke:var(--terra);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .35s var(--ease-out)}
+.pick__box{width:24px;height:24px;border:1.5px solid var(--graphite);border-radius:6px;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.pick input:checked+.pick__box{background:var(--terra);border-color:var(--terra)}
+.pick__box svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .35s var(--ease-out)}
 .pick input:checked+.pick__box svg{stroke-dashoffset:0}
 .pick input:focus-visible+.pick__box{outline:2px solid var(--terra);outline-offset:3px}
 .pick__name{font:500 16px/1.25 var(--font-text)}
 .pick__name small{display:block;font-weight:400;color:#6f6458;font-size:14px}
-.pick__price{font:600 24px/1 "Caveat",cursive;color:var(--graphite);white-space:nowrap}
-.pick__price s{color:#9b8f80;font-size:18px;margin-right:6px}
+.pick__price{font:500 17px/1 var(--font-text);font-variant-numeric:tabular-nums;color:var(--graphite);white-space:nowrap}
+.pick__price s{color:#9b8f80;font-size:14px;font-weight:400;margin-right:6px}
 .planner__quick{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .chip{min-height:44px;padding:0 16px;border-radius:var(--pill);border:1.4px solid var(--graphite);background:transparent;font-weight:500;cursor:pointer;transition:background .2s,color .2s,transform .2s var(--ease-out)}
 .chip:hover{background:var(--graphite);color:var(--paper)}
 .chip:active{transform:scale(.96)}
-.planner__disc{font:600 22px "Caveat",cursive;color:var(--terra);margin-left:auto}
+.planner__disc{font:500 14px var(--font-text);color:var(--terra);margin-left:auto}
 .planner__when{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
 .planner .field label,.planner .field .label{font:500 14px/1 var(--font-text)}
 .planner .field input{min-height:48px;padding:10px 14px;border:1.4px solid #bfae8f;border-radius:6px;background:rgba(255,255,255,.35);font:400 16px var(--font-text);color:var(--graphite);width:100%}
@@ -236,12 +237,12 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
 .stepper{display:flex;align-items:center;border:1.4px solid #bfae8f;border-radius:6px;min-height:48px}
 .stepper button{width:44px;height:46px;border:0;background:none;font-size:20px;cursor:pointer}
 .stepper button:hover{background:rgba(165,83,47,.08)}
-.stepper output{min-width:34px;text-align:center;font:600 24px "Caveat",cursive}
-.planner__sum{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px 0;border-block:1.4px dashed #bfae8f}
+.stepper output{min-width:34px;text-align:center;font:500 17px var(--font-text);font-variant-numeric:tabular-nums}
+.planner__sum{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px 0;border-block:1px solid #cdbd9f}
 .planner__sum>div{display:grid;gap:2px}
 .planner__sum span,.planner__sum small{font-size:14px;color:#6f6458}
 .planner__sum strong{font:330 clamp(28px,2.3vw,36px)/1.05 var(--font-display);color:var(--graphite)}
-.planner__warn{font:500 20px/1.25 "Caveat",cursive;color:var(--terra);min-height:1.3em}
+.planner__warn{font:400 15px/1.4 var(--font-text);color:var(--terra);min-height:1.4em}
 .planner__warn.is-ok{color:#4f6b45}
 .planner .btn{justify-self:start}
 .planner .btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
@@ -1455,11 +1456,11 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
       <div class="hero-sk__side">
         <form class="planner" id="planner" aria-label="Elige habitaciones" onsubmit="return false">
           <ol class="planner__rooms">
-          <li><label class="pick" data-room="30"><input type="checkbox" value="30" data-base="140" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13c3 2 4 4 5 6 3-7 7-11 11-14"/></svg></span><span class="pick__name">Hab. 30<small>Tercera · terraza cubierta · 2 pax</small></span><b class="pick__price tabnum">140 €</b></label></li>
-          <li><label class="pick" data-room="31"><input type="checkbox" value="31" data-base="130" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13c3 2 4 4 5 6 3-7 7-11 11-14"/></svg></span><span class="pick__name">Hab. 31<small>Tercera · ventana en arco · 2 pax</small></span><b class="pick__price tabnum">130 €</b></label></li>
-          <li><label class="pick" data-room="20"><input type="checkbox" value="20" data-base="140" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13c3 2 4 4 5 6 3-7 7-11 11-14"/></svg></span><span class="pick__name">Hab. 20<small>Segunda · balcón a la plaza · 2 pax</small></span><b class="pick__price tabnum">140 €</b></label></li>
-          <li><label class="pick" data-room="21"><input type="checkbox" value="21" data-base="130" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13c3 2 4 4 5 6 3-7 7-11 11-14"/></svg></span><span class="pick__name">Hab. 21<small>Segunda · ventana lateral · 2 pax</small></span><b class="pick__price tabnum">130 €</b></label></li>
-          <li><label class="pick" data-room="10"><input type="checkbox" value="10" data-base="150" data-pax="4"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13c3 2 4 4 5 6 3-7 7-11 11-14"/></svg></span><span class="pick__name">Hab. 10<small>Baja · baño propio · 4 pax</small></span><b class="pick__price tabnum">150 €</b></label></li>
+          <li><label class="pick" data-room="30"><input type="checkbox" value="30" data-base="140" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pick__name">Hab. 30<small>Tercera · terraza cubierta · 2 pax</small></span><b class="pick__price tabnum">140 €</b></label></li>
+          <li><label class="pick" data-room="31"><input type="checkbox" value="31" data-base="130" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pick__name">Hab. 31<small>Tercera · ventana en arco · 2 pax</small></span><b class="pick__price tabnum">130 €</b></label></li>
+          <li><label class="pick" data-room="20"><input type="checkbox" value="20" data-base="140" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pick__name">Hab. 20<small>Segunda · balcón a la plaza · 2 pax</small></span><b class="pick__price tabnum">140 €</b></label></li>
+          <li><label class="pick" data-room="21"><input type="checkbox" value="21" data-base="130" data-pax="2"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pick__name">Hab. 21<small>Segunda · ventana lateral · 2 pax</small></span><b class="pick__price tabnum">130 €</b></label></li>
+          <li><label class="pick" data-room="10"><input type="checkbox" value="10" data-base="150" data-pax="4"><span class="pick__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pick__name">Hab. 10<small>Baja · baño propio · 4 pax</small></span><b class="pick__price tabnum">150 €</b></label></li>
           </ol>
           <div class="planner__quick">
             <button type="button" class="chip" data-all>Casa entera</button>
