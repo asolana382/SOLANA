@@ -17,7 +17,7 @@
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=DM+Sans:opsz,wght@9..40,300..600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
 <style>
 /* ================================================================
    SO-LA-NA Villages · Moratalla
@@ -175,7 +175,7 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
 .hero-sk__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"art head" "art side";grid-template-rows:auto 1fr;column-gap:clamp(24px,3.5vw,64px);row-gap:14px;align-items:start}
 .hero-sk__art{grid-area:art;align-self:center}.hero-sk__head{grid-area:head;display:grid;gap:12px}.hero-sk__side{grid-area:side}
 .hero-sk__art{position:relative}
-.sketch{display:block;width:100%;height:auto;max-height:calc(100svh - var(--nav-h) - 40px);font-family:"Caveat",cursive;overflow:visible}
+.sketch{display:block;width:100%;height:auto;max-height:calc(100svh - var(--nav-h) - 40px);font-family:var(--font-text);overflow:visible}
 .sketch .ln{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .sketch .g{stroke:var(--graphite);stroke-width:1.3}
 .sketch .soft{stroke:var(--graphite-2);stroke-width:1}
@@ -186,11 +186,11 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
 .sketch .ln.tc.faint{opacity:.16}
 .sketch .sheet .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .9s cubic-bezier(.4,0,.2,1) forwards;animation-delay:calc(var(--k) * 2.6ms)}
 @keyframes draw{to{stroke-dashoffset:0}}
-.sketch .flab text{font-size:29px;fill:var(--graphite)}
-.sketch .flab .flab__s{font-size:21px;fill:var(--graphite-2)}
+.sketch .flab text{font-size:17px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;fill:var(--graphite)}
+.sketch .flab .flab__s{font-size:15px;font-weight:400;letter-spacing:.02em;text-transform:none;fill:var(--graphite-2)}
 .sketch .flab path,.sketch .note path{fill:none;stroke:var(--graphite-2);stroke-width:1}
-.sketch .note text{font-size:23px;fill:var(--graphite-2)}
-.sketch .sign{font-size:21px;fill:var(--graphite-2)}
+.sketch .note text{font-size:15px;fill:var(--graphite-2)}
+.sketch .sign{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;fill:var(--graphite-2)}
 .sketch .labels,.sketch .note,.sketch .sign{opacity:0;animation:fadein .8s 1.6s forwards}
 @keyframes fadein{to{opacity:1}}
 .room{cursor:pointer;outline:none}
@@ -199,7 +199,7 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
 .room__edge{fill:none;stroke:var(--terra);stroke-width:1.5;stroke-dasharray:7 6;opacity:0;transition:opacity .3s}
 .room__tag{opacity:0;transform-box:fill-box;transform-origin:center;scale:.4;transition:opacity .3s,scale .5s cubic-bezier(.34,1.56,.64,1)}
 .room__tag path{fill:var(--paper);stroke:var(--terra);stroke-width:1.7}
-.room__tag text{font:600 25px "Caveat",cursive;fill:var(--terra);text-anchor:middle}
+.room__tag text{font:600 16px var(--font-text);fill:var(--terra);text-anchor:middle}
 .room:hover .room__fill,.room.is-hover .room__fill{opacity:.22;clip-path:inset(0 0 0 0)}
 .room:hover .room__edge,.room.is-hover .room__edge,.room:focus-visible .room__edge{opacity:.7}
 .room:focus-visible .room__edge{stroke-width:2.4;stroke-dasharray:none}
@@ -1410,42 +1410,42 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
 <path class="ln tc faint" pathLength="1" style="--k:825" d="M220.3 421.1Q229.2 428.7 237.9 436.5"/>
 <path class="ln tc faint" pathLength="1" style="--k:826" d="M229.7 422.0Q233.3 423.8 238.4 427.8"/>
 </g>
-<g class="labels"><g class="flab" aria-hidden="true"><text x="34" y="255">Tercera</text><text class="flab__s" x="34" y="279">30 · 31</text><path d="M120 249 C 170 245, 200 253, 242 249"/></g>
-<g class="flab" aria-hidden="true"><text x="34" y="412">Segunda</text><text class="flab__s" x="34" y="436">20 · 21</text><path d="M120 406 C 170 402, 200 410, 242 406"/></g>
-<g class="flab" aria-hidden="true"><text x="34" y="566">Primera</text><text class="flab__s" x="34" y="590">salón</text><path d="M120 560 C 170 556, 200 564, 242 560"/></g>
-<g class="flab" aria-hidden="true"><text x="34" y="712">Baja</text><text class="flab__s" x="34" y="736">10</text><path d="M120 706 C 170 702, 200 710, 242 706"/></g></g>
+<g class="labels"><g class="flab" aria-hidden="true"><text x="34" y="255">Tercera</text><text class="flab__s" x="34" y="279">30 · 31</text><path d="M190 249 C 210 245, 225 253, 242 249"/></g>
+<g class="flab" aria-hidden="true"><text x="34" y="412">Segunda</text><text class="flab__s" x="34" y="436">20 · 21</text><path d="M190 406 C 210 402, 225 410, 242 406"/></g>
+<g class="flab" aria-hidden="true"><text x="34" y="566">Primera</text><text class="flab__s" x="34" y="590">salón</text><path d="M190 560 C 210 556, 225 564, 242 560"/></g>
+<g class="flab" aria-hidden="true"><text x="34" y="712">Baja</text><text class="flab__s" x="34" y="736">10</text><path d="M190 706 C 210 702, 225 710, 242 706"/></g></g>
 <g class="hot"><g class="room" data-room="30" role="checkbox" aria-checked="false" tabindex="0" aria-label="Habitación 30, tercera planta, la de la terraza cubierta, 2 personas">
   <rect class="room__hit" x="252" y="152" width="268" height="182"/>
   <rect class="room__fill" x="252" y="152" width="268" height="182" fill="url(#hatch-sel)"/>
   <rect class="room__edge" x="255" y="155" width="262" height="176"/>
-  <g class="room__tag" transform="translate(488 214)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="7">30</text></g>
+  <g class="room__tag" transform="translate(488 214)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="6">30</text></g>
 </g>
 <g class="room" data-room="31" role="checkbox" aria-checked="false" tabindex="0" aria-label="Habitación 31, tercera planta, la de la ventana en arco, 2 personas">
   <rect class="room__hit" x="522" y="240" width="176" height="94"/>
   <rect class="room__fill" x="522" y="240" width="176" height="94" fill="url(#hatch-sel)"/>
   <rect class="room__edge" x="525" y="243" width="170" height="88"/>
-  <g class="room__tag" transform="translate(664 268)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="7">31</text></g>
+  <g class="room__tag" transform="translate(664 268)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="6">31</text></g>
 </g>
 <g class="room" data-room="20" role="checkbox" aria-checked="false" tabindex="0" aria-label="Habitación 20, segunda planta, 2 personas">
   <rect class="room__hit" x="252" y="336" width="268" height="152"/>
   <rect class="room__fill" x="252" y="336" width="268" height="152" fill="url(#hatch-sel)"/>
   <rect class="room__edge" x="255" y="339" width="262" height="146"/>
-  <g class="room__tag" transform="translate(446 364)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="7">20</text></g>
+  <g class="room__tag" transform="translate(446 364)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="6">20</text></g>
 </g>
 <g class="room" data-room="21" role="checkbox" aria-checked="false" tabindex="0" aria-label="Habitación 21, segunda planta, 2 personas">
   <rect class="room__hit" x="522" y="336" width="176" height="152"/>
   <rect class="room__fill" x="522" y="336" width="176" height="152" fill="url(#hatch-sel)"/>
   <rect class="room__edge" x="525" y="339" width="170" height="146"/>
-  <g class="room__tag" transform="translate(664 380)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="7">21</text></g>
+  <g class="room__tag" transform="translate(664 380)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="6">21</text></g>
 </g>
 <g class="room" data-room="10" role="checkbox" aria-checked="false" tabindex="0" aria-label="Habitación 10, planta baja, 4 personas, baño propio">
   <rect class="room__hit" x="252" y="642" width="446" height="98"/>
   <rect class="room__fill" x="252" y="642" width="446" height="98" fill="url(#hatch-sel)"/>
   <rect class="room__edge" x="255" y="645" width="440" height="92"/>
-  <g class="room__tag" transform="translate(446 676)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="7">10</text></g>
+  <g class="room__tag" transform="translate(446 676)"><path d="M-17 2c0-11 9-19 19-18s16 9 15 19-10 16-19 15-15-6-15-16z"/><text y="6">10</text></g>
 </g>
 <g class="note" aria-hidden="true"><path d="M440 548 C 470 540, 480 520, 500 512"/><text x="506" y="514">salón y cocina</text></g></g>
-<text class="sign" x="34" y="876" aria-hidden="true">SO-LA-NA Villages · Moratalla, casco antiguo</text>
+<text class="sign" x="34" y="896" aria-hidden="true">SO-LA-NA Villages · Moratalla, casco antiguo</text>
 </svg>
       </div>
       <div class="hero-sk__head">
