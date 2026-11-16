@@ -72,6 +72,12 @@
       "sourceType": "github",
       "skillPath": ".agents/skills/web-animation-design/SKILL.md",
       "computedHash": "5ab3163ce37913cb01408ca0621df49aa920bc87140fa3b3d5092f2d9c1cd624"
+    },
+    "wikipedia-search": {
+      "source": "FreedomIntelligence/OpenClaw-Medical-Skills",
+      "sourceType": "github",
+      "skillPath": "skills/wikipedia-search/SKILL.md",
+      "computedHash": "a2b547d3876f5f28d94f8b9d58acb77f8be8c0a230e7ca45387d9c026d6407cf"
     }
   }
 }
