@@ -2074,9 +2074,9 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
             <tbody>
               <tr><td>1 habitación</td><td class="num">130 – 150 €</td><td class="num">130 – 150 €</td></tr>
               <tr><td>2 habitaciones</td><td class="num">117 – 135 €</td><td class="num">234 – 261 €</td></tr>
-              <tr><td>3 habitaciones</td><td class="num">105,30 – 121,50 €</td><td class="num">324 – 348 €</td></tr>
-              <tr><td>4 habitaciones</td><td class="num">94,77 – 109,35 €</td><td class="num">394 – 408 €</td></tr>
-              <tr><td>Casa entera</td><td class="num">85,29 – 98,42 €</td><td class="num">453 €</td></tr>
+              <tr><td>3 habitaciones</td><td class="num">105 – 122 €</td><td class="num">323 – 348 €</td></tr>
+              <tr><td>4 habitaciones</td><td class="num">95 – 109 €</td><td class="num">394 – 408 €</td></tr>
+              <tr><td>Casa entera</td><td class="num">85 – 98 €</td><td class="num">452 €</td></tr>
             </tbody>
           </table>
           <p class="pnote" id="pnote">Según qué habitaciones elijáis. Las de 150&nbsp;€ y 140&nbsp;€ son la 10, la 20 y la 30; las de 130&nbsp;€, la 21 y la 31.</p>
@@ -2475,13 +2475,13 @@ a.ph:hover>img,.card-link:hover .ph>img{transform:scale(1.035)}
   const render = () => {
     const sel = chosen(), n = sel.length, f = n ? Math.pow(0.9, n - 1) : 1;
     svgRooms.forEach(g => { const on = boxes.find(b => b.value === g.dataset.room).checked; g.setAttribute('aria-checked', String(on)); const ir = $(`.inroom[data-in="${g.dataset.room}"]`); if (ir) ir.classList.toggle('is-open', on); });
-    boxes.forEach(b => { const base = +b.dataset.base, pr = b.closest('.pick').querySelector('.pick__price'); const v = Math.round(base * f * 100) / 100;
+    boxes.forEach(b => { const base = +b.dataset.base, pr = b.closest('.pick').querySelector('.pick__price'); const v = Math.round(base * f);
       pr.innerHTML = b.checked && n > 1 ? `<s>${base}</s>${eur(v)}` : eur(base); });
-    const night = sel.reduce((t, b) => t + (+b.dataset.base) * f, 0), pax = sel.reduce((t, b) => t + (+b.dataset.pax), 0);
+    const night = sel.reduce((t, b) => t + Math.round((+b.dataset.base) * f), 0), pax = sel.reduce((t, b) => t + (+b.dataset.pax), 0);
     $('#p-rooms').textContent = n ? (n === 5 ? 'Casa entera' : sel.map(b => b.dataset.name).join(', ')) : 'Ninguna habitación';
-    $('#p-night').textContent = n ? eur(Math.round(night * 100) / 100) : '—';
+    $('#p-night').textContent = n ? eur(night) : '—';
     $('#p-stay').textContent = `${nights} noche${nights > 1 ? 's' : ''}`;
-    $('#p-total').textContent = n ? eur(Math.round(night * nights * 100) / 100) : '—';
+    $('#p-total').textContent = n ? eur(night * nights) : '—';
     $('#p-pax').textContent = `hasta ${pax} personas`;
     $('#p-n').textContent = nights;
     $('.planner__disc').textContent = n > 1 ? `−${Math.round((1 - f) * 100)} % en cada habitación` : '';
