@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="es" data-type="place">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SO-LA-NA Villages · Casa rural en Moratalla</title>
+<meta name="description" content="Casa de pueblo en Moratalla (Murcia) para 12 personas: cinco habitaciones en tres plantas, por habitaciones o entera. La primera casa de SO-LA-NA.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SO-LA-NA Villages · Casa rural en Moratalla">
+<meta property="og:description" content="Cinco habitaciones, doce plazas y la sierra del Noroeste murciano a la puerta. Desde 130 € la noche.">
+<meta property="og:image" content="assets/villages/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f1e8">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="place">
+<meta name="page-kind" content="place">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..500&family=DM+Sans:opsz,wght@9..40,400..600&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens ===================================================== */
+:root{
+  --bg:#f6f1e8;        /* cal de las fachadas */
+  --surface:#ece3d3;   /* piedra caliza */
+  --line:#dccfb9;
+  --ink:#271f19;
+  --muted:#6b5f55;
+  --accent:#9c4f2c;    /* teja / terracota */
+  --accent-ink:#fff;
+  --pine:#26332a;      /* pinar de la sierra */
+  --pine-ink:#f2ece1;
+  --pine-muted:#b9b5a6;
+  --font-display:"Fraunces", "Times New Roman", serif;
+  --font-text:"DM Sans", system-ui, sans-serif;
+  --container:1320px;
+  --gutter:clamp(16px, 4vw, 48px);
+  --r-sm:.75rem; --r-md:1rem; --r-lg:1.5rem; --pill:999px;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.625,.05,0,1);
+  --fast:.25s; --med:.6s; --slow:.9s;
+  --nav-h:76px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--font-text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:350;line-height:1.06;letter-spacing:-.02em;margin:0;font-variation-settings:"opsz" 144}
+h1{font-size:clamp(44px,7.2vw,104px)}
+h2{font-size:clamp(34px,4.6vw,64px)}
+h3{font-size:clamp(24px,2.4vw,32px);line-height:1.15}
+p{margin:0}
+.wrap{width:min(100% - 2*var(--gutter), var(--container));margin-inline:auto}
+.eyebrow{font:500 13px/1 var(--font-text);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:var(--muted);max-width:56ch}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:var(--r-sm)}
+.skip:focus{top:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section{position:relative}
+.sec{padding-block:clamp(80px,11vw,160px)}
+.tabnum{font-variant-numeric:tabular-nums}
+
+/* ===== Photo frames (slots awaiting files) ======================= */
+.ph{position:relative;overflow:hidden;background:var(--surface);border-radius:var(--r-lg);margin:0;isolation:isolate}
+.ph>img{width:100%;height:100%;object-fit:cover;transition:transform var(--med) var(--ease-out)}
+a.ph:hover>img, a:hover>.ph>img, .card-link:hover .ph>img{transform:scale(1.03)}
+
+/* ===== Buttons (wipe on hover, press on click) =================== */
+.btn{--b-bg:var(--accent);--b-ink:var(--accent-ink);--b-wipe:rgba(0,0,0,.14);position:relative;display:inline-flex;align-items:center;gap:.6em;min-height:48px;padding:0 1.5em;border-radius:var(--pill);border:0;background:var(--b-bg);color:var(--b-ink);font:500 16px/1 var(--font-text);text-decoration:none;cursor:pointer;overflow:hidden;isolation:isolate;transition:transform var(--fast) var(--ease-out)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--b-wipe);transform:translateY(101%);border-radius:inherit;transition:transform .45s var(--ease-io)}
+.btn:hover::before{transform:translateY(0)}
+.btn:active{transform:scale(.97)}
+.btn .arr{transition:transform var(--fast) var(--ease-out)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn--light{--b-bg:var(--bg);--b-ink:var(--ink);--b-wipe:var(--surface)}
+.btn--ghost{--b-bg:transparent;--b-ink:var(--ink);--b-wipe:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.link{position:relative;text-decoration:none;font-weight:500;display:inline-flex;gap:.4em;align-items:center;min-height:44px}
+.link::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease-io)}
+.link:hover::after{transform:scaleX(1);transform-origin:left}
+.link .arr{transition:transform var(--fast) var(--ease-out)}
+.link:hover .arr{transform:translateX(3px)}
+
+/* ===== Header + side nav (Domek) ================================= */
+.top{position:fixed;inset:0 0 auto;z-index:50;height:var(--nav-h);display:flex;align-items:center;transition:background var(--med) var(--ease-out),color var(--med) var(--ease-out),box-shadow var(--med)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.top{color:#fff}
+.top.is-solid{background:var(--bg);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:baseline;gap:.5em;text-decoration:none;min-height:44px;align-items:center}
+.brand b{font:600 18px/1 var(--font-text);letter-spacing:.06em}
+.brand span{font:400 italic 20px/1 var(--font-display)}
+.top__actions{display:flex;gap:10px;align-items:center}
+.menu-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 18px;border-radius:var(--pill);border:1px solid currentColor;background:transparent;color:inherit;font:500 16px/1 var(--font-text);cursor:pointer;transition:background var(--fast),color var(--fast),transform var(--fast) var(--ease-out)}
+.menu-btn:hover{background:rgba(255,255,255,.14)}
+.top.is-solid .menu-btn:hover{background:var(--surface)}
+.menu-btn:active{transform:scale(.97)}
+.menu-btn i{display:grid;gap:4px;width:18px}
+.menu-btn i::before,.menu-btn i::after{content:"";height:1.5px;background:currentColor;transition:transform var(--fast) var(--ease-out)}
+.top .btn{min-height:48px}
+@media (max-width:640px){.top .btn{display:none}}
+
+.sidenav{position:fixed;inset:0;z-index:60;display:grid;grid-template-columns:1fr minmax(0,560px);pointer-events:none}
+.sidenav__shade{background:rgba(20,16,12,.48);opacity:0;transition:opacity var(--med) var(--ease-out)}
+.sidenav__panel{background:var(--bg);color:var(--ink);transform:translateX(100%);transition:transform .7s var(--ease-io);display:flex;flex-direction:column;padding:24px clamp(24px,4vw,48px) 32px;overflow:auto}
+.sidenav.is-open{pointer-events:auto}
+.sidenav.is-open .sidenav__shade{opacity:1}
+.sidenav.is-open .sidenav__panel{transform:none}
+.sidenav__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.sidenav__close{min-height:48px;padding:0 18px;border-radius:var(--pill);border:1px solid var(--line);background:none;font:500 16px/1 var(--font-text);cursor:pointer;color:var(--ink)}
+.sidenav__close:hover{background:var(--surface)}
+.sidenav__media{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;background:var(--surface);margin-bottom:24px}
+.sidenav__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .5s var(--ease-out),transform .9s var(--ease-out)}
+.sidenav__media img.is-on{opacity:1;transform:none}
+.sidenav__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.sidenav__list a{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font:350 clamp(28px,3.2vw,40px)/1.1 var(--font-display);transition:padding var(--fast) var(--ease-out),color var(--fast)}
+.sidenav__list a span{font:400 14px/1 var(--font-text);color:var(--muted)}
+.sidenav__list a:hover,.sidenav__list a:focus-visible{padding-left:12px;color:var(--accent)}
+.sidenav__foot{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;color:var(--muted)}
+.sidenav .sidenav__list li{opacity:0;transform:translateX(24px);transition:opacity .5s var(--ease-out),transform .6s var(--ease-out)}
+.sidenav.is-open .sidenav__list li{opacity:1;transform:none}
+.sidenav.is-open .sidenav__list li:nth-child(2){transition-delay:.04s}.sidenav.is-open .sidenav__list li:nth-child(3){transition-delay:.08s}.sidenav.is-open .sidenav__list li:nth-child(4){transition-delay:.12s}.sidenav.is-open .sidenav__list li:nth-child(5){transition-delay:.16s}.sidenav.is-open .sidenav__list li:nth-child(6){transition-delay:.2s}.sidenav.is-open .sidenav__list li:nth-child(7){transition-delay:.24s}
+@media (max-width:760px){.sidenav{grid-template-columns:0 1fr}.sidenav__media{display:none}}
+
+/* ===== Hero (Domek full-bleed + Casa Mínima headline) =========== */
+.hero{min-height:100svh;display:grid;align-items:end;color:#fff;padding-bottom:clamp(40px,7vw,96px);overflow:hidden}
+.hero__media{position:absolute;inset:0;border-radius:0;z-index:-1;background:#4a4238}
+.hero__media img{animation:heroZoom 2.4s var(--ease-out) both}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,14,10,.35) 0%,rgba(18,14,10,0) 30%,rgba(18,14,10,.15) 55%,rgba(18,14,10,.62) 100%)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:end}
+.hero h1{max-width:12ch}
+.hero__side{display:grid;gap:24px;justify-items:start;max-width:420px}
+.hero__side p{font-size:18px;line-height:1.55;color:rgba(255,255,255,.88)}
+.hero__facts{display:flex;flex-wrap:wrap;gap:8px}
+.hero__facts li{list-style:none;border:1px solid rgba(255,255,255,.4);border-radius:var(--pill);padding:8px 14px;font-size:14px}
+.hero__facts{margin:0;padding:0}
+[data-enter]>*{animation:enter 1s var(--ease-out) both}
+[data-enter]>*:nth-child(2){animation-delay:.12s}
+[data-enter]>*:nth-child(3){animation-delay:.24s}
+@keyframes enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+@media (max-width:860px){.hero__grid{grid-template-columns:1fr}}
+
+/* ===== Arrival statement (la llegada de SO-LA-NA) =============== */
+.arrival{text-align:center}
+.arrival .eyebrow{display:block;margin-bottom:28px}
+.arrival__text{font:350 clamp(28px,3.6vw,50px)/1.18 var(--font-display);letter-spacing:-.015em;max-width:24ch;margin:0 auto}
+.arrival__text em{font-style:italic;color:var(--accent)}
+.arrival__text .w{opacity:.22;transition:opacity .35s linear}
+.arrival__text .w.is-lit{opacity:1}
+.arrival__sign{margin-top:36px;color:var(--muted)}
+
+/* ===== La casa (Domek cabin mosaic) ============================= */
+.cabin__head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:56px}
+.cabin__head .lead{margin-bottom:20px}
+.mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,13vw,190px);gap:16px}
+.mosaic .ph:nth-child(1){grid-column:1/6;grid-row:span 3}
+.mosaic .ph:nth-child(2){grid-column:6/10;grid-row:span 2}
+.mosaic .ph:nth-child(3){grid-column:10/13;grid-row:span 2}
+.mosaic .ph:nth-child(4){grid-column:6/9;grid-row:span 2}
+.mosaic .ph:nth-child(5){grid-column:9/13;grid-row:span 2}
+.mosaic .ph:nth-child(6){grid-column:1/6;grid-row:span 1}
+@media (max-width:860px){.cabin__head{grid-template-columns:1fr}.mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw}.mosaic .ph:nth-child(n){grid-column:auto;grid-row:auto}.mosaic .ph:nth-child(1){grid-column:1/-1;grid-row:span 2}}
+
+/* ===== Vibes marquee (Domek) ==================================== */
+.vibes{padding-block:clamp(48px,6vw,80px);overflow:hidden;border-block:1px solid var(--line)}
+.vibes__row{display:flex;width:max-content;animation:marquee 46s linear infinite}
+.vibes__row--rev{animation-direction:reverse;animation-duration:54s;margin-top:12px}
+.vibes__row p{font:300 clamp(36px,5.6vw,84px)/1.15 var(--font-display);white-space:nowrap;padding-right:.4em;letter-spacing:-.02em}
+.vibes__row p i{font-style:italic;color:var(--accent)}
+.vibes__row p b{font-weight:300;color:var(--line);padding-inline:.35em}
+.vibes:hover .vibes__row,.vibes.is-paused .vibes__row{animation-play-state:paused}
+.vibes__pause{display:block;margin:20px auto 0;min-height:44px;padding:0 18px;border-radius:var(--pill);border:1px solid var(--line);background:none;color:var(--muted);font:500 14px/1 var(--font-text);cursor:pointer}
+.vibes__pause:hover{background:var(--surface)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== Habitaciones y precios =================================== */
+.rooms__head{display:flex;justify-content:space-between;gap:32px;align-items:end;flex-wrap:wrap;margin-bottom:48px}
+.rooms__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:start}
+.floors{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.floors li{display:grid;grid-template-columns:110px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.floors .fl{font:350 22px/1.2 var(--font-display)}
+.floors .rm{color:var(--muted)}
+.floors .px{font-weight:500}
+.floors li.is-hot{background:linear-gradient(90deg,var(--surface),transparent)}
+.price-wrap{background:#fff9f0;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,3vw,36px)}
+.seg{display:flex;flex-wrap:wrap;gap:6px;padding:6px;background:var(--surface);border-radius:var(--pill);margin-bottom:24px}
+.seg button{flex:1 1 auto;min-height:44px;padding:0 14px;border:0;border-radius:var(--pill);background:transparent;color:var(--muted);font:500 15px/1 var(--font-text);cursor:pointer;transition:background var(--fast) var(--ease-out),color var(--fast)}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.ptable{width:100%;border-collapse:collapse;font-size:16px}
+.ptable th,.ptable td{padding:13px 0;border-bottom:1px solid var(--line);text-align:left}
+.ptable th{font:500 13px/1 var(--font-text);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ptable td:last-child,.ptable th:last-child{text-align:right}
+.ptable td.num{font-variant-numeric:tabular-nums;font-weight:500;transition:opacity .25s}
+.ptable tr.is-dim td{opacity:.35}
+.ptotal{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;gap:16px;flex-wrap:wrap}
+.ptotal strong{font:350 clamp(30px,3vw,42px)/1 var(--font-display)}
+.pnote{margin-top:12px;color:var(--muted);font-size:15px}
+.rules{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rules div{border-top:1px solid var(--line);padding-top:14px;font-size:15px;color:var(--muted)}
+.rules b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+@media (max-width:900px){.rooms__grid{grid-template-columns:1fr}.rules{grid-template-columns:1fr}}
+
+/* ===== Corazón del Noroeste (Casa Mínima split) ================= */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.split .ph{aspect-ratio:4/5}
+.split__text{display:grid;gap:24px}
+.split__text p{color:var(--muted);font-size:18px}
+@media (max-width:860px){.split{grid-template-columns:1fr}.split .ph{aspect-ratio:4/3}}
+
+/* ===== Banner (Casa Mínima sea/valley band) ===================== */
+.band{min-height:88svh;display:grid;align-items:center;color:#fff;overflow:hidden}
+.band .ph{position:absolute;inset:0;border-radius:0;z-index:-1;background:#3e4a3c}
+.band .ph::after{content:"";position:absolute;inset:0;background:rgba(15,18,12,.38)}
+.band__box{max-width:620px;display:grid;gap:24px;justify-items:start}
+.band__box p{font-size:18px;color:rgba(255,255,255,.9)}
+
+/* ===== Gallery strip (Casa Mínima) ============================= */
+.strip{overflow:hidden;padding-block:clamp(40px,5vw,72px)}
+.strip__row{display:flex;gap:16px;width:max-content;animation:marquee 70s linear infinite}
+.strip:hover .strip__row,.strip.is-paused .strip__row{animation-play-state:paused}
+.strip .ph{width:clamp(240px,26vw,380px);aspect-ratio:4/5;flex:none}
+.strip .ph:nth-child(even){aspect-ratio:1;align-self:center}
+
+/* ===== Calendario (Casa Mínima seasons) ======================== */
+.cal__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin-bottom:56px;align-items:end}
+.cal__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ev{background:#fff9f0;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:grid;gap:12px;align-content:start;transition:transform var(--fast) var(--ease-out),border-color var(--fast)}
+.ev:hover{transform:translateY(-2px);border-color:var(--accent)}
+.ev time{font:500 13px/1.3 var(--font-text);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.ev h3{font-size:26px}
+.ev p{color:var(--muted);font-size:16px}
+.ev--big{grid-column:span 2;grid-row:span 2;align-content:end;background:var(--pine);color:var(--pine-ink);border-color:var(--pine)}
+.ev--big p{color:var(--pine-muted)}
+.ev--big time{color:#e6b48f}
+.ev--big h3{font-size:clamp(28px,3vw,40px)}
+@media (max-width:900px){.cal__head{grid-template-columns:1fr}.cal__grid{grid-template-columns:1fr 1fr}.ev--big{grid-column:1/-1;grid-row:auto}}
+@media (max-width:600px){.cal__grid{grid-template-columns:1fr}}
+
+/* ===== Descubriendo el entorno (Casa Mínima 3 columns) ========= */
+.disc__head{max-width:760px;margin-bottom:56px;display:grid;gap:20px}
+.disc__head p{color:var(--muted);font-size:18px}
+.disc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.disc__card{display:grid;gap:18px;text-decoration:none}
+.disc__card .ph{aspect-ratio:4/5}
+.disc__card p{color:var(--muted);font-size:16px}
+@media (max-width:860px){.disc__grid{grid-template-columns:1fr}.disc__card .ph{aspect-ratio:4/3}}
+
+/* ===== Atracciones (Domek slider with thumbs) ================== */
+.attr{background:var(--pine);color:var(--pine-ink)}
+.attr .eyebrow{color:var(--pine-muted)}
+.attr__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.attr__head h2{max-width:16ch}
+.attr__stage{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:stretch}
+.attr__media{position:relative;aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;background:#33433a}
+.attr__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity .6s var(--ease-out),transform 1.2s var(--ease-out)}
+.attr__media img.is-on{opacity:1;transform:none}
+.attr__info{display:flex;flex-direction:column;gap:20px}
+.attr__count{font:500 14px/1 var(--font-text);color:var(--pine-muted)}
+.attr__slide{display:none;gap:16px}
+.attr__slide.is-on{display:grid;animation:enter .6s var(--ease-out) both}
+.attr__slide .dist{display:inline-block;justify-self:start;border:1px solid rgba(255,255,255,.3);border-radius:var(--pill);padding:8px 14px;font-size:14px}
+.attr__slide p{color:var(--pine-muted);font-size:17px}
+.attr__nav{display:flex;gap:10px;margin-top:auto}
+.attr__nav button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:var(--pine-ink);font-size:20px;cursor:pointer;transition:background var(--fast),transform var(--fast) var(--ease-out)}
+.attr__nav button:hover{background:rgba(255,255,255,.12)}
+.attr__nav button:active{transform:scale(.94)}
+.thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:24px;list-style:none;padding:0}
+.thumbs button{position:relative;width:100%;aspect-ratio:4/3;padding:0;border:0;border-radius:var(--r-sm);overflow:hidden;cursor:pointer;background:#33433a;opacity:.5;transition:opacity var(--fast)}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:#e6b48f;transition:width .4s var(--ease-out)}
+.thumbs button:hover{opacity:.8}
+.thumbs button[aria-current="true"]{opacity:1}
+.thumbs button[aria-current="true"]::after{width:100%}
+.thumbs span{position:absolute;inset:auto 8px 8px;font-size:12px;color:#fff;text-align:left;line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+@media (max-width:900px){.attr__stage{grid-template-columns:1fr}.thumbs{grid-template-columns:repeat(3,1fr)}}
+
+/* ===== FAQ (Domek) ============================================= */
+.faq__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px)}
+.faq__aside{display:grid;gap:20px;align-content:start;position:sticky;top:calc(var(--nav-h) + 24px)}
+.faq__aside p{color:var(--muted)}
+.qa{border-top:1px solid var(--line)}
+.qa:last-child{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:22px 0;cursor:pointer;font:350 clamp(20px,1.8vw,24px)/1.3 var(--font-display)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 100% no-repeat;transition:transform var(--fast) var(--ease-out)}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa summary:hover{color:var(--accent)}
+.qa__body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease-out)}
+.qa[open] .qa__body{grid-template-rows:1fr}
+.qa__body>div{overflow:hidden}
+.qa__body p{padding-bottom:22px;color:var(--muted);max-width:62ch}
+@media (max-width:860px){.faq__grid{grid-template-columns:1fr}.faq__aside{position:static}}
+
+/* ===== El camino (Casa Mínima routes) ========================== */
+.road__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin-bottom:48px;align-items:end}
+.road__head p{color:var(--muted);font-size:18px}
+.routes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.route{border-top:1px solid var(--ink);padding-top:20px;display:grid;gap:10px;align-content:start}
+.route h3{font-size:26px}
+.route .km{font:500 14px/1 var(--font-text);color:var(--accent);letter-spacing:.06em}
+.route p{color:var(--muted);font-size:16px}
+.route .t{color:var(--ink);font-weight:500}
+.road__note{margin-top:40px;padding:20px 24px;border-radius:var(--r-md);background:var(--surface);color:var(--muted);font-size:16px}
+.road__note b{color:var(--ink)}
+@media (max-width:900px){.road__head{grid-template-columns:1fr}.routes{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.routes{grid-template-columns:1fr}}
+
+/* ===== Reserva + close (Casa Mínima close + form) ============== */
+.book__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:stretch}
+.book__intro{display:grid;gap:24px;align-content:start}
+.book__intro .ph{aspect-ratio:1;margin-top:16px}
+.form{background:#fff9f0;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.5vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;align-content:start}
+.field{display:grid;gap:8px}
+.field--full{grid-column:1/-1}
+.field label{font:500 14px/1 var(--font-text)}
+.field input,.field select,.field textarea{width:100%;min-height:52px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--bg);color:var(--ink);font:400 16px/1.3 var(--font-text);transition:border-color var(--fast),box-shadow var(--fast)}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(156,79,44,.15)}
+.field .err{color:#9b2c1f;font-size:14px;min-height:0}
+.form .btn{justify-self:start}
+.form__msg{grid-column:1/-1;color:var(--muted);font-size:14px}
+.form__ok{grid-column:1/-1;padding:16px;border-radius:var(--r-sm);background:var(--surface)}
+@media (max-width:860px){.book__grid{grid-template-columns:1fr}.form{grid-template-columns:1fr}.book__intro .ph{aspect-ratio:4/3}}
+
+/* ===== Footer (Domek photo footer + Casa Mínima legal) ========= */
+.foot{position:relative;color:var(--pine-ink);overflow:hidden;isolation:isolate}
+.foot .ph{position:absolute;inset:0;border-radius:0;z-index:-1;background:var(--pine)}
+.foot .ph::after{content:"";position:absolute;inset:0;background:rgba(22,30,24,.72)}
+.foot__top{padding-block:clamp(80px,10vw,140px) 48px;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+.foot h2{font-size:clamp(36px,4.4vw,60px);max-width:13ch}
+.foot h4{margin:0 0 14px;font:500 13px/1 var(--font-text);letter-spacing:.12em;text-transform:uppercase;color:var(--pine-muted)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.foot a{text-decoration:none}
+.foot .link{min-height:40px}
+.foot p{color:var(--pine-muted)}
+.foot__name{font:300 clamp(56px,12vw,172px)/.9 var(--font-display);letter-spacing:-.04em;white-space:nowrap;padding-block:24px 8px;color:rgba(242,236,225,.92)}
+.foot__legal{border-top:1px solid rgba(255,255,255,.18);padding-block:20px 28px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;color:var(--pine-muted);font-size:14px}
+.foot__legal a{min-height:44px;display:inline-flex;align-items:center}
+@media (max-width:900px){.foot__top{grid-template-columns:1fr 1fr}.foot__top>div:first-child{grid-column:1/-1}}
+
+/* ===== Phone action bar ======================================== */
+.actionbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;transform:translateY(140%);transition:transform .5s var(--ease-out)}
+.actionbar .btn{width:100%;justify-content:center;min-height:54px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.actionbar.is-on{transform:none}
+@media (max-width:640px){.actionbar{display:block}}
+
+/* ===== Reduced motion ========================================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .vibes__row,.strip__row{animation:none!important;transform:none!important}
+  .arrival__text .w{opacity:1}
+}
+</style>
+</head>
+<body>
+<!--
+  SO-LA-NA Villages · Moratalla
+  Estructura: combinación de domekwbrzozach.pl (nav lateral con fotos, hero, mosaico de la casa,
+  cinta de palabras, galería de atracciones con distancias, FAQ, footer con foto) y
+  casaminima.com/es/el-entorno (corazón del territorio, banda, franja de fotos, estaciones -> calendario,
+  naturaleza/cultura/gastronomía, el camino, cierre con reserva). Código, textos y fotos propios.
+  Fotos: cada <img> lee assets/villages/<slot>.jpg — ver assets/villages/FOTOS.md.
+-->
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="SO-LA-NA Villages, inicio"><b>SO-LA-NA</b><span>Villages</span></a>
+    <div class="top__actions">
+      <a class="btn" href="#reservar">Consultar disponibilidad <span class="arr" aria-hidden="true">→</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sidenav"><i aria-hidden="true"></i>Menú</button>
+    </div>
+  </div>
+</header>
+
+<div class="sidenav" id="sidenav" aria-hidden="true">
+  <div class="sidenav__shade" data-close></div>
+  <nav class="sidenav__panel" aria-label="Menú principal">
+    <div class="sidenav__head">
+      <span class="brand"><b>SO-LA-NA</b><span>Villages</span></span>
+      <button class="sidenav__close" type="button" data-close>Cerrar</button>
+    </div>
+    <div class="sidenav__media" aria-hidden="true">
+      <img src="assets/villages/hero.jpg" alt="" data-key="inicio" class="is-on">
+      <img src="assets/villages/casa-fachada.jpg" alt="" data-key="casa">
+      <img src="assets/villages/casa-habitacion.jpg" alt="" data-key="habitaciones">
+      <img src="assets/villages/sierra.jpg" alt="" data-key="entorno">
+      <img src="assets/villages/tamborada.jpg" alt="" data-key="calendario">
+      <img src="assets/villages/carretera.jpg" alt="" data-key="llegar">
+      <img src="assets/villages/casco.jpg" alt="" data-key="reservar">
+    </div>
+    <ul class="sidenav__list">
+      <li><a href="#main" data-key="inicio">Inicio <span>01</span></a></li>
+      <li><a href="#casa" data-key="casa">La casa <span>02</span></a></li>
+      <li><a href="#habitaciones" data-key="habitaciones">Habitaciones y precios <span>03</span></a></li>
+      <li><a href="#entorno" data-key="entorno">El entorno <span>04</span></a></li>
+      <li><a href="#calendario" data-key="calendario">Un año en Moratalla <span>05</span></a></li>
+      <li><a href="#llegar" data-key="llegar">Cómo llegar <span>06</span></a></li>
+      <li><a href="#reservar" data-key="reservar">Reservar <span>07</span></a></li>
+    </ul>
+    <div class="sidenav__foot">
+      <span>Moratalla · Región de Murcia</span>
+      <a class="link" href="index.html">Volver a SO-LA-NA <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- 1 · HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <figure class="ph hero__media">
+      <img src="assets/villages/hero.jpg" alt="Moratalla escalonada bajo su castillo, con la sierra detrás" fetchpriority="high" data-slot="hero">
+    </figure>
+    <div class="wrap hero__grid" data-enter>
+      <h1 id="h1">Una casa de pueblo en Moratalla</h1>
+      <div class="hero__side">
+        <p>Cinco habitaciones en tres plantas para doce personas, en el Noroeste de Murcia. Se alquila por habitaciones o entera, desde 130&nbsp;€ la noche.</p>
+        <ul class="hero__facts"><li>12 plazas</li><li>5 habitaciones</li><li>Salón y cocina</li></ul>
+        <a class="btn btn--light" href="#reservar">Consultar disponibilidad <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · LA LLEGADA DE SO-LA-NA -->
+  <section class="sec arrival" aria-labelledby="arrival-h">
+    <div class="wrap">
+      <h2 id="arrival-h" class="eyebrow">SO-LA-NA abre su primera casa</h2>
+      <p class="arrival__text" data-words>Llevamos años levantando escenarios de flamenco, del Teatro Real a las minas de La Unión. Ahora abrimos <em>una casa</em> en Moratalla, para quien quiera escuchar el pueblo de cerca: la tamborada en la puerta, la sierra al fondo y la mesa larga del salón.</p>
+      <p class="arrival__sign">SO-LA-NA Villages · la llegada de SO-LA-NA a la hostelería</p>
+    </div>
+  </section>
+
+  <!-- 3 · LA CASA (mosaico Domek) -->
+  <section class="sec" id="casa" aria-labelledby="casa-h" style="padding-top:0">
+    <div class="wrap">
+      <header class="cabin__head">
+        <h2 id="casa-h">Una casa entera en el casco antiguo, para vosotros</h2>
+        <div>
+          <p class="lead">Planta baja con la habitación grande para cuatro, salón y cocina en la primera, y dos habitaciones dobles en cada una de las plantas de arriba. Muros gruesos, fresca en verano.</p>
+          <a class="link" href="#habitaciones">Ver habitaciones y precios <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </header>
+      <div class="mosaic">
+        <a class="ph" href="#habitaciones" aria-label="La fachada de la casa"><img src="assets/villages/casa-fachada.jpg" alt="Fachada encalada de la casa en una calle de Moratalla" loading="lazy" data-slot="casa-fachada"></a>
+        <a class="ph" href="#habitaciones" aria-label="El salón"><img src="assets/villages/casa-salon.jpg" alt="Salón con la mesa larga y la chimenea" loading="lazy" data-slot="casa-salon"></a>
+        <a class="ph" href="#habitaciones" aria-label="Una habitación doble"><img src="assets/villages/casa-habitacion.jpg" alt="Habitación doble con luz de ventana" loading="lazy" data-slot="casa-habitacion"></a>
+        <a class="ph" href="#habitaciones" aria-label="La cocina"><img src="assets/villages/casa-cocina.jpg" alt="Cocina de la casa" loading="lazy" data-slot="casa-cocina"></a>
+        <a class="ph" href="#habitaciones" aria-label="Vistas desde la tercera planta"><img src="assets/villages/casa-vistas.jpg" alt="Tejados de Moratalla desde la ventana de la tercera planta" loading="lazy" data-slot="casa-vistas"></a>
+        <a class="ph" href="#habitaciones" aria-label="Un detalle de la casa"><img src="assets/villages/casa-detalle.jpg" alt="Detalle de madera y piedra en la escalera" loading="lazy" data-slot="casa-detalle"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · CINTA DE PALABRAS (Domek vibes) -->
+  <section class="vibes" aria-label="Moratalla en palabras">
+    <div class="vibes__row" aria-hidden="true">
+      <p>tambores en la calle <b>/</b> <i>silencio de sierra</i> <b>/</b> mesa larga <b>/</b> <i>olor a lavanda</i> <b>/</b> tambores en la calle <b>/</b> <i>silencio de sierra</i> <b>/</b> mesa larga <b>/</b> <i>olor a lavanda</i> <b>/</b></p>
+      <p>tambores en la calle <b>/</b> <i>silencio de sierra</i> <b>/</b> mesa larga <b>/</b> <i>olor a lavanda</i> <b>/</b> tambores en la calle <b>/</b> <i>silencio de sierra</i> <b>/</b> mesa larga <b>/</b> <i>olor a lavanda</i> <b>/</b></p>
+    </div>
+    <div class="vibes__row vibes__row--rev" aria-hidden="true">
+      <p><i>piedra fresca</i> <b>/</b> mañanas de pinar <b>/</b> <i>cielo de estrellas</i> <b>/</b> agua del Alhárabe <b>/</b> <i>piedra fresca</i> <b>/</b> mañanas de pinar <b>/</b> <i>cielo de estrellas</i> <b>/</b> agua del Alhárabe <b>/</b></p>
+      <p><i>piedra fresca</i> <b>/</b> mañanas de pinar <b>/</b> <i>cielo de estrellas</i> <b>/</b> agua del Alhárabe <b>/</b> <i>piedra fresca</i> <b>/</b> mañanas de pinar <b>/</b> <i>cielo de estrellas</i> <b>/</b> agua del Alhárabe <b>/</b></p>
+    </div>
+    <p class="wrap" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Tambores en la calle, silencio de sierra, mesa larga, olor a lavanda, piedra fresca, mañanas de pinar, cielo de estrellas, agua del Alhárabe.</p>
+    <button class="vibes__pause" type="button" aria-pressed="false">Pausar movimiento</button>
+  </section>
+
+  <!-- 5 · HABITACIONES Y PRECIOS (datos del Excel) -->
+  <section class="sec" id="habitaciones" aria-labelledby="hab-h">
+    <div class="wrap">
+      <header class="rooms__head">
+        <div style="display:grid;gap:16px;max-width:640px">
+          <span class="eyebrow">Habitaciones y precios</span>
+          <h2 id="hab-h">Cuantas más habitaciones, mejor precio cada una</h2>
+        </div>
+        <p class="lead" style="max-width:40ch">Elige cuántas habitaciones quieres: cada una que añades baja un 10&nbsp;% el precio de todas.</p>
+      </header>
+
+      <div class="rooms__grid">
+        <div>
+          <ul class="floors" aria-label="Plantas de la casa">
+            <li data-rooms="10"><span class="fl">Baja</span><span class="rm">Habitación 10 · baño propio</span><span class="px">4 pax</span></li>
+            <li><span class="fl">Primera</span><span class="rm">Salón y cocina</span><span class="px">—</span></li>
+            <li data-rooms="20 21"><span class="fl">Segunda</span><span class="rm">Habitaciones 20 y 21 · baño de planta</span><span class="px">2 + 2 pax</span></li>
+            <li data-rooms="30 31"><span class="fl">Tercera</span><span class="rm">Habitaciones 30 y 31 · baño de planta</span><span class="px">2 + 2 pax</span></li>
+            <li><span class="fl">Total</span><span class="rm">Cinco habitaciones</span><span class="px">12 pax</span></li>
+          </ul>
+          <div class="rules">
+            <div><b>Fines de semana</b>Mínimo 2 noches y 3 habitaciones.</div>
+            <div><b>1 o 2 habitaciones</b>Mínimo 3 noches.</div>
+            <div><b>Hasta 3 habitaciones</b>Una en cada planta, todas con baño exclusivo.</div>
+            <div><b>4 habitaciones o la casa</b>Las de la misma planta (20-21, 30-31) comparten baño.</div>
+          </div>
+        </div>
+
+        <div class="price-wrap">
+          <div class="seg" role="group" aria-label="Número de habitaciones">
+            <button type="button" data-n="1" aria-pressed="false">1 hab.</button>
+            <button type="button" data-n="2" aria-pressed="false">2 hab.</button>
+            <button type="button" data-n="3" aria-pressed="true">3 hab.</button>
+            <button type="button" data-n="4" aria-pressed="false">4 hab.</button>
+            <button type="button" data-n="5" aria-pressed="false">Casa entera</button>
+          </div>
+          <table class="ptable" aria-describedby="pnote">
+            <thead><tr><th scope="col">Habitación</th><th scope="col">Planta</th><th scope="col">Por noche</th></tr></thead>
+            <tbody>
+              <tr data-room="10"><td>Habitación 10 · 4 pax</td><td>Baja</td><td class="num" data-base="150"></td></tr>
+              <tr data-room="20"><td>Habitación 20 · 2 pax</td><td>Segunda</td><td class="num" data-base="140"></td></tr>
+              <tr data-room="21"><td>Habitación 21 · 2 pax</td><td>Segunda</td><td class="num" data-base="130"></td></tr>
+              <tr data-room="30"><td>Habitación 30 · 2 pax</td><td>Tercera</td><td class="num" data-base="140"></td></tr>
+              <tr data-room="31"><td>Habitación 31 · 2 pax</td><td>Tercera</td><td class="num" data-base="130"></td></tr>
+            </tbody>
+          </table>
+          <div class="ptotal" aria-live="polite">
+            <span id="ptotal-label">3 habitaciones, por noche</span>
+            <strong class="tabnum" id="ptotal">324 – 348 €</strong>
+          </div>
+          <p class="pnote" id="pnote">Precio por habitación y noche, según cuántas reservéis a la vez. El total va de la combinación más económica a la más alta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · EN EL CORAZÓN DEL NOROESTE (Casa Mínima) -->
+  <section class="sec" id="entorno" aria-labelledby="cor-h" style="padding-top:0">
+    <div class="wrap split">
+      <div class="split__text">
+        <span class="eyebrow">El entorno</span>
+        <h2 id="cor-h">En el corazón del Noroeste murciano</h2>
+        <p>Moratalla sube por la ladera hasta su castillo, entre la sierra y la vega del río Alhárabe. Es el municipio más extenso de la Región y uno de los más verdes: pinares, barrancos y aldeas como Benizar o Inazares.</p>
+        <p>Desde la casa se sale andando al casco antiguo, y en coche, en menos de una hora, se llega a Revolcadores, el techo de Murcia, o a los abrigos de arte rupestre del Calar.</p>
+      </div>
+      <a class="ph" href="#atracciones" aria-label="Ver lugares cerca de la casa"><img src="assets/villages/sierra.jpg" alt="Pinares de la Sierra de Moratalla" loading="lazy" data-slot="sierra"></a>
+    </div>
+  </section>
+
+  <!-- 7 · BANDA (Casa Mínima) -->
+  <section class="band" aria-labelledby="band-h">
+    <figure class="ph"><img src="assets/villages/lavanda.jpg" alt="Campos de lavanda en flor cerca de Moratalla" loading="lazy" data-slot="lavanda"></figure>
+    <div class="wrap">
+      <div class="band__box">
+        <h2 id="band-h">De la tamborada a la lavanda, el pueblo cambia cada mes</h2>
+        <p>En primavera suenan los tambores, en verano florecen los campos de Territorio Lavanda y en otoño la sierra se llena de setas y senderistas.</p>
+        <a class="btn btn--light" href="#calendario">Ver el calendario <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FRANJA DE FOTOS (Casa Mínima) -->
+  <section class="strip" aria-label="Fotos de Moratalla">
+    <div class="strip__row">
+      <a class="ph" href="#atracciones" aria-label="El castillo"><img src="assets/villages/castillo.jpg" alt="Castillo de Moratalla sobre los tejados" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="El casco antiguo"><img src="assets/villages/casco.jpg" alt="Calle empinada del casco antiguo de Moratalla" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="El río"><img src="assets/villages/rio.jpg" alt="Río Alhárabe entre chopos" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="Revolcadores"><img src="assets/villages/revolcadores.jpg" alt="Cumbres de Revolcadores" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="Benizar"><img src="assets/villages/benizar.jpg" alt="Aldea de Benizar entre campos" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="Arte rupestre"><img src="assets/villages/rupestre.jpg" alt="Pinturas rupestres de la Cañaica del Calar" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="El castillo" tabindex="-1" aria-hidden="true"><img src="assets/villages/castillo.jpg" alt="" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="El casco antiguo" tabindex="-1" aria-hidden="true"><img src="assets/villages/casco.jpg" alt="" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="El río" tabindex="-1" aria-hidden="true"><img src="assets/villages/rio.jpg" alt="" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="Revolcadores" tabindex="-1" aria-hidden="true"><img src="assets/villages/revolcadores.jpg" alt="" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="Benizar" tabindex="-1" aria-hidden="true"><img src="assets/villages/benizar.jpg" alt="" loading="lazy"></a>
+      <a class="ph" href="#atracciones" aria-label="Arte rupestre" tabindex="-1" aria-hidden="true"><img src="assets/villages/rupestre.jpg" alt="" loading="lazy"></a>
+    </div>
+  </section>
+
+  <!-- 9 · UN AÑO EN MORATALLA (Casa Mínima estaciones -> calendario del Excel) -->
+  <section class="sec" id="calendario" aria-labelledby="cal-h">
+    <div class="wrap">
+      <header class="cal__head">
+        <div style="display:grid;gap:16px"><span class="eyebrow">Un pueblo, doce meses</span><h2 id="cal-h">Un año en Moratalla</h2></div>
+        <p class="lead">Las fechas que llenan el pueblo. Para Semana Santa y los Encierros conviene reservar con meses de antelación.</p>
+      </header>
+      <div class="cal__grid">
+        <article class="ev ev--big">
+          <time>Semana Santa · 21 al 28 de marzo de 2027</time>
+          <h3>Tamborada y Semana Santa</h3>
+          <p>Declarada Patrimonio de la Humanidad por la UNESCO. El toque del tambor de Jueves Santo, Viernes Santo y Domingo de Resurrección pasa literalmente por la puerta de la casa.</p>
+        </article>
+        <article class="ev">
+          <time>Julio · semana del 11 al 17</time>
+          <h3>Fiestas Mayores y Encierros por Vereda</h3>
+          <p>Suelta de ganado bravo por las calles, conciertos y verbenas.</p>
+        </article>
+        <article class="ev">
+          <time>Junio a agosto</time>
+          <h3>Territorio Lavanda y Lalavand</h3>
+          <p>Floración de los campos aromáticos, rutas guiadas y el festival Lalavand, sobre todo en julio.</p>
+        </article>
+        <article class="ev">
+          <time>Mayo</time>
+          <h3>Romerías</h3>
+          <p>Jesucristo Aparecido el primer domingo, la subida al Santuario de Casa Cristo a mediados y la Virgen de la Rogativa el último domingo.</p>
+        </article>
+        <article class="ev">
+          <time>Junio · del 9 al 15</time>
+          <h3>Cristo del Rayo</h3>
+          <p>Día de la Región el 9 y del Santísimo Cristo del Rayo el 15. Arrancan las Fiestas Mayores con desfile huertano y procesión.</p>
+        </article>
+        <article class="ev">
+          <time>Octubre y noviembre</time>
+          <h3>Puentes de sierra</h3>
+          <p>Rutas micológicas, senderismo en Revolcadores y visitas guiadas al arte rupestre.</p>
+        </article>
+        <article class="ev">
+          <time>Finales de septiembre · 26 al 29</time>
+          <h3>Fiestas de San Miguel</h3>
+          <p>El cierre del verano en el pueblo.</p>
+        </article>
+        <article class="ev">
+          <time>Diciembre y enero</time>
+          <h3>Navidad y Reyes</h3>
+          <p>Navidad, Nochevieja y la cabalgata de Reyes con actividades en el centro.</p>
+        </article>
+        <article class="ev">
+          <time>Mediados de abril · 19 de abril de 2027</time>
+          <h3>Festivo de primavera</h3>
+          <p>Fiesta local que suele coincidir con jornadas deportivas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · DESCUBRIENDO EL ENTORNO (Casa Mínima 3 columnas) -->
+  <section class="sec" aria-labelledby="disc-h" style="padding-top:0">
+    <div class="wrap">
+      <header class="disc__head">
+        <span class="eyebrow">Descubriendo el entorno</span>
+        <h2 id="disc-h">Sierra, historia y mesa en un mismo municipio</h2>
+        <p>Más allá del casco antiguo, el Noroeste se abre en tres caminos.</p>
+      </header>
+      <div class="disc__grid">
+        <a class="disc__card card-link" href="#atracciones">
+          <figure class="ph"><img src="assets/villages/revolcadores.jpg" alt="Senderos de la sierra de Revolcadores" loading="lazy"></figure>
+          <h3>Naturaleza</h3>
+          <p>Revolcadores, el pico más alto de la Región, los pinares de la Sierra de Moratalla y los ríos Alhárabe y Benamor, con baños y sendas a la sombra.</p>
+        </a>
+        <a class="disc__card card-link" href="#atracciones">
+          <figure class="ph"><img src="assets/villages/rupestre.jpg" alt="Abrigo con pinturas rupestres en el Calar" loading="lazy"></figure>
+          <h3>Cultura</h3>
+          <p>El castillo y el casco antiguo, la Tamborada y los abrigos de arte rupestre levantino, Patrimonio de la Humanidad. Caravaca de la Cruz queda a un cuarto de hora.</p>
+        </a>
+        <a class="disc__card card-link" href="#atracciones">
+          <figure class="ph"><img src="assets/villages/mesa.jpg" alt="Mesa con productos del Noroeste murciano" loading="lazy"></figure>
+          <h3>Gastronomía</h3>
+          <p>Cocina de sierra: migas, gachasmigas, embutido de matanza y el arroz de Calasparra, con denominación de origen, a pocos kilómetros.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · ATRACCIONES (Domek slider con miniaturas) -->
+  <section class="sec attr" id="atracciones" aria-labelledby="attr-h">
+    <div class="wrap">
+      <header class="attr__head">
+        <div style="display:grid;gap:16px"><span class="eyebrow">Cerca de la casa</span><h2 id="attr-h">Lugares para llenar los días en Moratalla</h2></div>
+        <p class="attr__count tabnum" aria-live="polite"><span id="attr-i">01</span> / 06</p>
+      </header>
+      <div class="attr__stage" data-slider>
+        <div class="attr__media" aria-hidden="true">
+          <img src="assets/villages/castillo.jpg" alt="" class="is-on">
+          <img src="assets/villages/revolcadores.jpg" alt="">
+          <img src="assets/villages/rupestre.jpg" alt="">
+          <img src="assets/villages/rio.jpg" alt="">
+          <img src="assets/villages/caravaca.jpg" alt="">
+          <img src="assets/villages/benizar.jpg" alt="">
+        </div>
+        <div class="attr__info">
+          <article class="attr__slide is-on"><span class="dist">A pie desde la casa</span><h3>Castillo y casco antiguo</h3><p>La torre del homenaje corona el pueblo; las calles estrechas bajan hasta la plaza y la iglesia de la Asunción.</p></article>
+          <article class="attr__slide"><span class="dist" data-assumed>Unos 45 minutos en coche</span><h3>Revolcadores</h3><p>El techo de la Región de Murcia, con sendas entre sabinas y vistas sobre tres provincias.</p></article>
+          <article class="attr__slide"><span class="dist" data-assumed>Unos 40 minutos en coche</span><h3>Arte rupestre del Calar</h3><p>Abrigos con pinturas levantinas, Patrimonio de la Humanidad, con visitas guiadas en temporada.</p></article>
+          <article class="attr__slide"><span class="dist" data-assumed>A 5 minutos</span><h3>Río Alhárabe</h3><p>Paseos entre chopos y huertas, y pozas para el verano en el río y su vecino, el Benamor.</p></article>
+          <article class="attr__slide"><span class="dist" data-assumed>Unos 15 minutos en coche</span><h3>Caravaca de la Cruz</h3><p>Ciudad santa del Jubileo, con su Real Basílica-Santuario y los Caballos del Vino cada mayo.</p></article>
+          <article class="attr__slide"><span class="dist" data-assumed>Unos 25 minutos en coche</span><h3>Benizar y las aldeas</h3><p>Aldeas de sierra entre campos de cereal y lavanda, con miradores y fuentes.</p></article>
+          <div class="attr__nav">
+            <button type="button" data-prev aria-label="Lugar anterior">←</button>
+            <button type="button" data-next aria-label="Lugar siguiente">→</button>
+          </div>
+        </div>
+      </div>
+      <ul class="thumbs">
+        <li><button type="button" aria-current="true" aria-label="Castillo y casco antiguo"><img src="assets/villages/castillo.jpg" alt=""><span>Castillo</span></button></li>
+        <li><button type="button" aria-label="Revolcadores"><img src="assets/villages/revolcadores.jpg" alt=""><span>Revolcadores</span></button></li>
+        <li><button type="button" aria-label="Arte rupestre del Calar"><img src="assets/villages/rupestre.jpg" alt=""><span>Arte rupestre</span></button></li>
+        <li><button type="button" aria-label="Río Alhárabe"><img src="assets/villages/rio.jpg" alt=""><span>Río Alhárabe</span></button></li>
+        <li><button type="button" aria-label="Caravaca de la Cruz"><img src="assets/villages/caravaca.jpg" alt=""><span>Caravaca</span></button></li>
+        <li><button type="button" aria-label="Benizar y las aldeas"><img src="assets/villages/benizar.jpg" alt=""><span>Benizar</span></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 12 · PREGUNTAS FRECUENTES (Domek) -->
+  <section class="sec" aria-labelledby="faq-h">
+    <div class="wrap faq__grid">
+      <aside class="faq__aside">
+        <span class="eyebrow">Antes de venir</span>
+        <h2 id="faq-h">Preguntas frecuentes</h2>
+        <p>¿Algo más? Escríbenos desde el formulario de reserva y te contestamos en el día.</p>
+      </aside>
+      <div>
+        <details class="qa"><summary>¿Puedo reservar solo una habitación?</summary><div class="qa__body"><div><p>Sí. Entre semana puedes reservar una o dos habitaciones con un mínimo de tres noches, y eliges cuál. Todas tienen baño exclusivo cuando reservas hasta tres.</p></div></div></details>
+        <details class="qa"><summary>¿Hay estancia mínima los fines de semana?</summary><div class="qa__body"><div><p>Los fines de semana se reserva un mínimo de dos noches y tres habitaciones.</p></div></div></details>
+        <details class="qa"><summary>¿Cuántas personas caben?</summary><div class="qa__body"><div><p>Doce: la habitación 10 de la planta baja es para cuatro, y las 20, 21, 30 y 31 son dobles.</p></div></div></details>
+        <details class="qa"><summary>¿Qué baños comparten las habitaciones?</summary><div class="qa__body"><div><p>La habitación 10 tiene baño propio. En la segunda y la tercera planta hay un baño por planta: si reservas las dos habitaciones de una misma planta, lo compartís.</p></div></div></details>
+        <details class="qa"><summary>¿A qué hora es la entrada y la salida?</summary><div class="qa__body"><div><p data-assumed>Entrada desde las 16:00 y salida hasta las 12:00. Si necesitas otro horario, dínoslo al reservar.</p></div></div></details>
+        <details class="qa"><summary>¿Cuándo hay que reservar con más antelación?</summary><div class="qa__body"><div><p>En Semana Santa (la Tamborada), en las Fiestas Mayores de julio y en los puentes de otoño la casa se llena antes. Mira el calendario del pueblo más arriba.</p></div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · EL CAMINO (Casa Mínima) -->
+  <section class="sec" id="llegar" aria-labelledby="road-h" style="padding-top:0">
+    <div class="wrap">
+      <header class="road__head">
+        <div style="display:grid;gap:16px"><span class="eyebrow">Cómo llegar</span><h2 id="road-h">El camino hasta Moratalla</h2></div>
+        <p>La carretera deja atrás la huerta y sube entre almendros y pinos. Los últimos kilómetros ya son sierra.</p>
+      </header>
+      <div class="routes" data-assumed>
+        <div class="route"><span class="km">≈ 85 km</span><h3>Desde Murcia</h3><p>Autovía del Noroeste (RM-15) hasta Caravaca y la RM-714 hasta Moratalla.</p><p class="t">≈ 1 h 10 min</p></div>
+        <div class="route"><span class="km">≈ 160 km</span><h3>Desde Alicante</h3><p>A-7 hacia Murcia y desde allí la Autovía del Noroeste.</p><p class="t">≈ 1 h 50 min</p></div>
+        <div class="route"><span class="km">≈ 270 km</span><h3>Desde Valencia</h3><p>A-31 hasta Almansa, A-33 hacia Jumilla y Cieza, y por Calasparra hasta Moratalla.</p><p class="t">≈ 3 h</p></div>
+        <div class="route"><span class="km">≈ 390 km</span><h3>Desde Madrid</h3><p>A-4 y A-43 hasta Albacete, luego hacia Hellín y Calasparra.</p><p class="t">≈ 4 h</p></div>
+      </div>
+      <p class="road__note"><b>Aeropuerto más cercano:</b> Región de Murcia (Corvera), a algo más de una hora en coche. Os mandamos la ubicación exacta de la casa al confirmar la reserva.</p>
+    </div>
+  </section>
+
+  <!-- 14 · RESERVA + CIERRE (Casa Mínima) -->
+  <section class="sec" id="reservar" aria-labelledby="book-h" style="padding-top:0">
+    <div class="wrap book__grid">
+      <div class="book__intro">
+        <span class="eyebrow">Reservas</span>
+        <h2 id="book-h">Ven a vivir Moratalla desde dentro</h2>
+        <p class="lead">Dinos fechas, cuántos sois y cuántas habitaciones queréis. Te confirmamos disponibilidad y precio en el día.</p>
+        <figure class="ph"><img src="assets/villages/casco.jpg" alt="Casco antiguo de Moratalla al atardecer" loading="lazy"></figure>
+      </div>
+      <form class="form" id="book-form" novalidate>
+        <div class="field"><label for="f-in">Llegada</label><input id="f-in" name="llegada" type="text" inputmode="numeric" placeholder="dd/mm/aaaa" required><span class="err" id="e-in"></span></div>
+        <div class="field"><label for="f-out">Salida</label><input id="f-out" name="salida" type="text" inputmode="numeric" placeholder="dd/mm/aaaa" required><span class="err" id="e-out"></span></div>
+        <div class="field"><label for="f-rooms">Habitaciones</label>
+          <select id="f-rooms" name="habitaciones"><option>1 habitación</option><option>2 habitaciones</option><option selected>3 habitaciones</option><option>4 habitaciones</option><option>Casa entera</option></select></div>
+        <div class="field"><label for="f-guests">Personas</label><input id="f-guests" name="personas" type="number" min="1" max="12" value="6" required><span class="err" id="e-guests"></span></div>
+        <div class="field field--full"><label for="f-name">Nombre</label><input id="f-name" name="nombre" type="text" autocomplete="name" required><span class="err" id="e-name"></span></div>
+        <div class="field field--full"><label for="f-mail">Correo electrónico</label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err" id="e-mail"></span></div>
+        <div class="field field--full"><label for="f-msg">Algo que debamos saber (opcional)</label><textarea id="f-msg" name="mensaje"></textarea></div>
+        <button class="btn" type="submit">Consultar disponibilidad <span class="arr" aria-hidden="true">→</span></button>
+        <p class="form__msg">Se abre tu correo con la consulta lista para enviar a reservas@so-la-na.example.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- 15 · FOOTER (Domek con foto + legal de Casa Mínima) -->
+<footer class="foot">
+  <figure class="ph"><img src="assets/villages/footer.jpg" alt="" loading="lazy"></figure>
+  <div class="wrap">
+    <div class="foot__top">
+      <div style="display:grid;gap:24px;align-content:start">
+        <h2>La primera casa de SO-LA-NA</h2>
+        <a class="btn btn--light" href="#reservar" style="justify-self:start">Consultar disponibilidad <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <div><h4>Dónde</h4><p>Casco antiguo<br>Moratalla, Región de Murcia</p></div>
+      <div><h4>Contacto</h4><ul><li><a class="link" href="mailto:reservas@so-la-na.example">reservas@so-la-na.example</a></li><li><a class="link" href="index.html">so-la-na.com</a></li></ul></div>
+      <div><h4>La casa</h4><ul><li><a class="link" href="#casa">La casa</a></li><li><a class="link" href="#habitaciones">Precios</a></li><li><a class="link" href="#entorno">El entorno</a></li><li><a class="link" href="#llegar">Cómo llegar</a></li></ul></div>
+    </div>
+    <p class="foot__name" aria-hidden="true">Moratalla</p>
+    <div class="foot__legal">
+      <span>© 2026 SO-LA-NA Villages</span>
+      <span style="display:flex;flex-wrap:wrap;gap:0 24px"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a><a href="credits.html">Fotografías vía Wikimedia Commons</a></span>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Reserva rápida"><a class="btn" href="#reservar">Consultar disponibilidad <span class="arr" aria-hidden="true">→</span></a></nav>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Missing photo files leave the frame's flat stone colour, never a broken icon */
+  $$('img').forEach(img => { const off = () => img.style.visibility = 'hidden'; img.addEventListener('error', off); if (img.complete && !img.naturalWidth && img.getAttribute('src')) off(); });
+
+  /* Header turns solid after the hero */
+  const top = $('#top'), hero = $('.hero');
+  new IntersectionObserver(([e]) => top.classList.toggle('is-solid', !e.isIntersecting), { rootMargin: `-${76}px 0px 0px 0px` }).observe(hero);
+
+  /* Side nav with a photo per item */
+  const nav = $('#sidenav'), btn = $('.menu-btn'), panel = $('.sidenav__panel');
+  const setOpen = (o) => {
+    nav.classList.toggle('is-open', o); nav.setAttribute('aria-hidden', String(!o)); btn.setAttribute('aria-expanded', String(o));
+    document.body.style.overflow = o ? 'hidden' : '';
+    if (o) $('.sidenav__list a', nav).focus(); else btn.focus();
+  };
+  btn.addEventListener('click', () => setOpen(true));
+  $$('[data-close]', nav).forEach(el => el.addEventListener('click', () => setOpen(false)));
+  $$('.sidenav__list a', nav).forEach(a => {
+    const show = () => $$('.sidenav__media img', nav).forEach(i => i.classList.toggle('is-on', i.dataset.key === a.dataset.key));
+    a.addEventListener('mouseenter', show); a.addEventListener('focus', show);
+    a.addEventListener('click', () => { nav.classList.remove('is-open'); nav.setAttribute('aria-hidden','true'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; });
+  });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('is-open')) setOpen(false); });
+
+  /* Arrival statement: words light up as it scrolls through (its own section only) */
+  const st = $('[data-words]');
+  if (st && !reduce) {
+    const walk = (node) => [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) { const f = document.createDocumentFragment(); n.textContent.split(/(\s+)/).forEach(t => { if (!t) return; if (/^\s+$/.test(t)) f.append(t); else { const s = document.createElement('span'); s.className = 'w'; s.textContent = t; f.append(s); } }); n.replaceWith(f); }
+      else if (n.nodeType === 1) walk(n);
+    });
+    walk(st);
+    const words = $$('.w', st);
+    const tick = () => { const r = st.getBoundingClientRect(), vh = innerHeight; const p = Math.min(1, Math.max(0, (vh * .85 - r.top) / (r.height + vh * .35))); const n = Math.round(p * words.length); words.forEach((w, i) => w.classList.toggle('is-lit', i < n)); };
+    addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true }); tick();
+  }
+
+  /* Marquee pause button (vibes + strip) */
+  const pb = $('.vibes__pause');
+  pb.addEventListener('click', () => { const on = pb.getAttribute('aria-pressed') !== 'true'; pb.setAttribute('aria-pressed', String(on)); pb.textContent = on ? 'Reanudar movimiento' : 'Pausar movimiento'; $('.vibes').classList.toggle('is-paused', on); $('.strip').classList.toggle('is-paused', on); });
+
+  /* Price calculator from the spreadsheet: each extra room takes 10% off every room */
+  const eur = v => v.toLocaleString('es-ES', { minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }) + ' €';
+  const rows = $$('.ptable tbody tr'); const bases = rows.map(r => +$('.num', r).dataset.base);
+  const ranges = { 1: [130, 150], 2: [234, 261], 3: [324, 348.3], 4: [393.66, 408.24], 5: [452.71, 452.71] };
+  const labels = { 1: '1 habitación, por noche', 2: '2 habitaciones, por noche', 3: '3 habitaciones, por noche', 4: '4 habitaciones, por noche', 5: 'Casa entera, por noche' };
+  const setN = (n) => {
+    const f = Math.pow(0.9, n - 1);
+    rows.forEach((r, i) => { const c = $('.num', r); c.style.opacity = 0; setTimeout(() => { c.textContent = eur(Math.round(bases[i] * f * 100) / 100); c.style.opacity = 1; }, 120); });
+    const [lo, hi] = ranges[n]; $('#ptotal').textContent = lo === hi ? eur(Math.round(lo)) : `${eur(Math.round(lo))} – ${eur(Math.round(hi))}`;
+    $('#ptotal-label').textContent = labels[n];
+    $$('.seg button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.n === n)));
+    const sel = $('#f-rooms'); if (sel) sel.selectedIndex = n - 1;
+  };
+  $$('.seg button').forEach(b => b.addEventListener('click', () => setN(+b.dataset.n)));
+  rows.forEach((r, i) => $('.num', r).textContent = eur(Math.round(bases[i] * 0.81 * 100) / 100));
+
+  /* Attractions slider with thumbnails (Domek) */
+  const sl = $('[data-slider]'), imgs = $$('.attr__media img', sl), slides = $$('.attr__slide', sl), th = $$('.thumbs button'); let cur = 0;
+  const go = (i) => { cur = (i + slides.length) % slides.length; [imgs, slides].forEach(set => set.forEach((el, k) => el.classList.toggle('is-on', k === cur))); th.forEach((b, k) => b.setAttribute('aria-current', String(k === cur))); $('#attr-i').textContent = String(cur + 1).padStart(2, '0'); };
+  $('[data-prev]', sl).addEventListener('click', () => go(cur - 1)); $('[data-next]', sl).addEventListener('click', () => go(cur + 1));
+  th.forEach((b, k) => b.addEventListener('click', () => go(k)));
+  sl.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(cur - 1); if (e.key === 'ArrowRight') go(cur + 1); });
+
+  /* FAQ: one open at a time */
+  $$('.qa').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('.qa').forEach(o => o !== d && (o.open = false)); }));
+
+  /* Booking form: validates, then opens the guest's mail app with the request */
+  const form = $('#book-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault(); let ok = true;
+    const date = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+    const check = (id, err, test, msg) => { const el = $(id), out = $(err); const good = test(el.value.trim()); out.textContent = good ? '' : msg; el.setAttribute('aria-invalid', String(!good)); if (!good) out.id && el.setAttribute('aria-describedby', out.id); ok = ok && good; };
+    check('#f-in', '#e-in', v => date.test(v), 'Escribe la fecha como dd/mm/aaaa.');
+    check('#f-out', '#e-out', v => date.test(v), 'Escribe la fecha como dd/mm/aaaa.');
+    check('#f-guests', '#e-guests', v => +v >= 1 && +v <= 12, 'Entre 1 y 12 personas.');
+    check('#f-name', '#e-name', v => v.length > 1, 'Dinos tu nombre.');
+    check('#f-mail', '#e-mail', v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v), 'Revisa el correo.');
+    if (!ok) { $('[aria-invalid="true"]', form).focus(); return; }
+    const d = new FormData(form); const body = [...d.entries()].map(([k, v]) => `${k}: ${v}`).join('\n');
+    location.href = `mailto:reservas@so-la-na.example?subject=${encodeURIComponent('Consulta SO-LA-NA Villages')}&body=${encodeURIComponent(body)}`;
+  });
+
+  /* Phone bar: only after the hero button scrolls away, hidden over the booking section */
+  const bar = $('.actionbar'); let pastHero = false, atBook = false; const upd = () => bar.classList.toggle('is-on', pastHero && !atBook);
+  new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; upd(); }).observe($('.hero .btn'));
+  new IntersectionObserver(([e]) => { atBook = e.isIntersecting; upd(); }).observe($('#reservar'));
+})();
+</script>
+</body>
+</html>
