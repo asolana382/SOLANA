@@ -19,6 +19,12 @@
       "skillPath": "skills/ascii-animation/SKILL.md",
       "computedHash": "b8b5f56046c43c82c3300d46c4295014c590bc340cb9351cfbe89f41f0a8f2b7"
     },
+    "clone-website": {
+      "source": "dmae97/omk",
+      "sourceType": "github",
+      "skillPath": ".omk/skills/clone-website/SKILL.md",
+      "computedHash": "f8d2137c877126fa04a6b7c56dd8482219ad6bb0605b3a9863e7a6f346406d28"
+    },
     "design-taste-frontend": {
       "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
