@@ -1,31 +1,10 @@
 # Fotos de SO-LA-NA Villages
 
-Cada archivo va en esta carpeta con este nombre exacto (JPG, 2000 px de ancho como mínimo para hero, banda y footer, y 1200 px para el resto). La página los recoge sola.
+## Entorno (hechas)
+42 fotos de Moratalla y del Noroeste, de Wikimedia Commons con licencia libre, en WebP a 800 px y a 1280/1920 px.
+Autores y licencias en `credits.json` y en la página `credits.html`.
 
-## De la casa (las tienes que hacer tú: luz de ventana, sin flash)
-| Archivo | Qué mostrar |
-|---|---|
-| casa-fachada.jpg | La fachada desde la calle, de frente |
-| casa-salon.jpg | El salón con la mesa (primera planta) |
-| casa-habitacion.jpg | Una habitación doble entera |
-| casa-cocina.jpg | La cocina |
-| casa-vistas.jpg | Los tejados desde una ventana de la tercera planta |
-| casa-detalle.jpg | Un detalle: escalera, madera, azulejo |
-
-## De Moratalla (Wikimedia Commons con licencia libre, o fotos propias)
-| Archivo | Qué mostrar |
-|---|---|
-| hero.jpg | Panorámica del pueblo bajo el castillo (horizontal) |
-| castillo.jpg | El castillo y la torre del homenaje |
-| casco.jpg | Una calle del casco antiguo |
-| sierra.jpg | Pinares de la Sierra de Moratalla (vertical 4:5) |
-| lavanda.jpg | Campos de lavanda en flor (horizontal, banda a pantalla completa) |
-| rio.jpg | Río Alhárabe o Benamor |
-| revolcadores.jpg | Revolcadores |
-| rupestre.jpg | Cañaica del Calar / arte rupestre |
-| caravaca.jpg | Caravaca de la Cruz, la basílica |
-| benizar.jpg | Benizar o una aldea de sierra |
-| tamborada.jpg | La Tamborada (sin caras reconocibles en primer plano) |
-| carretera.jpg | La carretera de llegada entre almendros o pinos |
-| mesa.jpg | Productos de la zona: embutido, arroz de Calasparra, migas |
-| footer.jpg | La sierra al atardecer |
+## La casa (pendientes)
+Los seis recuadros de la sección "La casa" están en blanco a propósito. Cuando haya fotos:
+fachada desde la calle, salón con la mesa, una habitación doble, cocina, vistas desde la tercera planta y un detalle (escalera, madera).
+Luz de ventana, sin flash, horizontales y verticales.
